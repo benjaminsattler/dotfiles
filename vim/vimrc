@@ -1,0 +1,5 @@
+syntax on
+set background=light
+set ai tabstop=4 number showcmd ruler
+set modeline
+set modelines=5
