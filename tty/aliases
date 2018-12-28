@@ -1,1 +1,2 @@
 alias r="ranger"
+alias pods="watch kubectl get pods"
