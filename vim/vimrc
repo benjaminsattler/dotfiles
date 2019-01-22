@@ -3,3 +3,4 @@ set background=dark
 set ai tabstop=4 relativenumber number showcmd ruler
 set modeline
 set modelines=5
+set hlsearch
