@@ -1,6 +1,33 @@
 syntax on
 set background=dark
-set ai tabstop=4 relativenumber number showcmd ruler
+set autoindent
+set tabstop=4
+set number
+set relativenumber
+set showcmd
+set ruler
 set modeline
 set modelines=5
 set hlsearch
+set noswapfile
+set t_Co=256
+set hidden
+set runtimepath^=~/.vim/bundle/vim-rspec/
+set runtimepath^=~/.vim/bundle/asyncrun.vim/
+set runtimepath^=~/.vim/bundle/vim-airline/
+set runtimepath^=~/.vim/bundle/vim-airline-themes/
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+let g:airline_solarized_dark_text = 1
+let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
+set runtimepath^=~/.vim/bundle/vim-gitgutter/
+set updatetime=100
+
+let g:rspec_command = "AsyncRun SPEC={spec} rake tests:run_all"
+:let mapleader = ","
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
