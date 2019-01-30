@@ -16,6 +16,7 @@ set runtimepath^=~/.vim/bundle/vim-rspec/
 set runtimepath^=~/.vim/bundle/asyncrun.vim/
 set runtimepath^=~/.vim/bundle/vim-airline/
 set runtimepath^=~/.vim/bundle/vim-airline-themes/
+set runtimepath^=~/.vim/bundle/nerdtree/
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 let g:airline_solarized_dark_text = 1
