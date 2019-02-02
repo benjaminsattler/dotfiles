@@ -1,4 +1,5 @@
 syntax on
+set encoding=utf-8
 set background=dark
 set autoindent
 set tabstop=4
@@ -26,8 +27,12 @@ set runtimepath^=~/.vim/bundle/vim-gitgutter/
 let g:gitgutter_map_keys = 0
 set runtimepath^=~/.vim/bundle/vim-rspec/
 set updatetime=100
-
-let g:rspec_command = "AsyncRun SPEC={spec} rake tests:run_all"
+set runtimepath^=~/.vim/bundle/vim-localvimrc/
+let g:localvimrc_whitelist=['/Users/bsa/repos/']
+let g:localvimrc_sandbox=0
+set runtimepath^=~/.vim/bundle/vim-gutentags/
+set statusline+=%{gutentags#statusline()}
+let g:gutentags_cache_dir='~/.ctagscache/'
 :let mapleader = ","
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
