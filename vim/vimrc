@@ -1,18 +1,33 @@
+filetype plugin indent on
 syntax on
 set encoding=utf-8
 set background=dark
 set autoindent
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set expandtab
 set number
 set relativenumber
 set showcmd
 set ruler
 set modeline
 set modelines=5
+set incsearch
 set hlsearch
+set ignorecase
 set noswapfile
 set t_Co=256
 set hidden
+set spell
+autocmd FileType magit set nospell
+
+set wildmenu
+set showmatch
+set matchpairs=(:),{:},[:],<:>
+set foldenable
+set foldmethod=marker
+set foldlevel=0
+set modelines=0
 set runtimepath^=~/.vim/bundle/asyncrun.vim/
 set runtimepath^=~/.vim/bundle/nerdtree/
 set runtimepath^=~/.vim/bundle/vimagit/
@@ -39,3 +54,5 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+inoremap jk <esc>
