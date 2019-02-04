@@ -18,9 +18,9 @@ set ignorecase
 set noswapfile
 set t_Co=256
 set hidden
-set spell
-autocmd FileType magit set nospell
-
+set nospell
+autocmd FileType magit set spell
+autocmd FileType gitcommit set spell
 set wildmenu
 set showmatch
 set matchpairs=(:),{:},[:],<:>
