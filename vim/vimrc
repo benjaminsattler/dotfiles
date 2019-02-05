@@ -30,6 +30,8 @@ set foldlevel=0
 set modelines=0
 set runtimepath^=~/.vim/bundle/asyncrun.vim/
 set runtimepath^=~/.vim/bundle/nerdtree/
+let g:NERDTreeStatusline=1
+let g:NERDTreeShowLineNumbers=1
 set runtimepath^=~/.vim/bundle/vimagit/
 set runtimepath^=~/.vim/bundle/vim-airline/
 set runtimepath^=~/.vim/bundle/vim-airline-themes/
@@ -43,7 +45,7 @@ let g:gitgutter_map_keys = 0
 set runtimepath^=~/.vim/bundle/vim-rspec/
 set updatetime=100
 set runtimepath^=~/.vim/bundle/vim-localvimrc/
-let g:localvimrc_whitelist=['/Users/bsa/repos/']
+let g:localvimrc_whitelist=['/Users/bsa/src/.*', '/home/bsa/src/.*']
 let g:localvimrc_sandbox=0
 set runtimepath^=~/.vim/bundle/vim-gutentags/
 set statusline+=%{gutentags#statusline()}
@@ -56,6 +58,7 @@ if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir']
 set runtimepath^=~/.vim/bundle/syntastic/
 :let mapleader = ","
 " RSpec.vim mappings
@@ -63,6 +66,10 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-
+map <Leader>n :NERDTreeToggle<CR>
 inoremap jk <esc>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 autocmd FileType vue syntax sync fromstart
