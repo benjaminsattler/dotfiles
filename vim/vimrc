@@ -56,6 +56,7 @@ if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+set runtimepath^=~/.vim/bundle/syntastic/
 :let mapleader = ","
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
@@ -64,3 +65,4 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 inoremap jk <esc>
+autocmd FileType vue syntax sync fromstart
