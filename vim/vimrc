@@ -68,6 +68,7 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>n :NERDTreeToggle<CR>
 inoremap jk <esc>
+tnoremap jk <C-W>N
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
