@@ -47,17 +47,27 @@ set foldlevel=0                           " auto-fold from first level on
 autocmd FileType vue syntax sync fromstart" fix vue files syntax hiccups
 
 " custome keyboard mappings {{{
-:let mapleader = ","  " leader for custom commands, used by plugins
-inoremap jk <esc>     " allow to use jk to exit insertmode
-tnoremap jk <C-W>N    " allow to use jk to exit terminal mode
-nnoremap <C-h> <C-w>h " remap split navigation to shorter combo
-nnoremap <C-j> <C-w>j " remap split navigation to shorter combo
-nnoremap <C-k> <C-w>k " remap split navigation to shorter combo
-nnoremap <C-l> <C-w>l " remap split navigation to shorter combo
-nnoremap Q <nop>      " disable obnoxious ex mode
+" leader for custom commands, used by plugins
+:let mapleader = ","
+" allow to use jk to exit insertmode
+inoremap jk <esc>
+" allow to use jk to exit terminal mode
+tnoremap jk <C-W>N
+" remap split navigation to shorter combo
+nnoremap <C-h> <C-w>h
+" remap split navigation to shorter combo
+nnoremap <C-j> <C-w>j
+" remap split navigation to shorter combo
+nnoremap <C-k> <C-w>k
+" remap split navigation to shorter combo
+nnoremap <C-l> <C-w>l
+" disable obnoxious ex mode
+nnoremap Q <nop>
+" remap W to w
+cnoremap W w
 " }}}
 
-" NERDTree plugin {{{ {{{
+" NERDTree plugin {{{
 set runtimepath^=~/.vim/bundle/nerdtree/
 let g:NERDTreeStatusline=1
 let g:NERDTreeShowLineNumbers=1
