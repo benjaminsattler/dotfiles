@@ -8,11 +8,9 @@ set shiftwidth=2                          " vim shifts by 2 spaces
 set softtabstop=2                         " as does tab
 set expandtab                             " spaces are my preferred indentation method
 
-set background=dark                       " dark terminal background is default
 set relativenumber                        " line numbers relative to cursor position
 set showcmd                               " show contents of command buffer
 set ruler                                 " show cursor position
-
 set nomodeline                            " disable modelines (i use local-vimrc for that, it's safer)
 
 set incsearch                             " search as you type
@@ -21,7 +19,18 @@ set ignorecase                            " search case insensitive per default
 
 set noswapfile                            " disable .swp files
 set hidden                                " keep hidden file buffers instead of unloading them
-set t_Co=256                              " we usually have color support in out tty
+
+" color customizations {{{
+set background=dark                       " dark terminal background is default
+" Changes have blue-ish font color
+hi DiffChange term=bold ctermbg=None ctermfg=4 guibg=DarkMagenta
+" Additions have green-ish font color
+hi DiffAdd term=bold ctermbg=None ctermfg=2 guibg=DarkMagenta
+" Deletions have red-ish font color
+hi DiffDelete term=bold ctermbg=None ctermfg=5 guibg=DarkMagenta
+" Fold lines of closed folds are lime-ish
+hi Folded term=standout ctermbg=None ctermfg=121 guifg=Cyan guibg=DarkGrey
+" }}}
 
 set nospell                               " disable spell checking (we're mostly in source code files)
 autocmd FileType gitcommit set spell      " re-enable spell checking for commit messages
