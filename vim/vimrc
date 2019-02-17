@@ -76,6 +76,7 @@ map <Leader>n :NERDTreeToggle<CR>
 
 " vim airline plugin {{{
 set runtimepath^=~/.vim/bundle/vim-airline/
+set noshowmode
 " }}}
 
 " vim airline theme plugin {{{
