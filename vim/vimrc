@@ -1,52 +1,100 @@
-filetype plugin indent on
-syntax on
-set encoding=utf-8
-set background=dark
-set autoindent
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set number
-set relativenumber
-set showcmd
-set ruler
-set modeline
-set modelines=5
-set incsearch
-set hlsearch
-set ignorecase
-set noswapfile
-set t_Co=256
-set hidden
-set nospell
-autocmd FileType gitcommit set spell
-set wildmenu
-set showmatch
-set matchpairs=(:),{:},[:],<:>
-set foldenable
-set foldmethod=marker
-set foldlevel=0
-set modelines=0
+syntax on                                 " enable syntax highlighting
+filetype plugin indent on                 " enable filetype and indentation plugins
+set nocompatible                          " we certainly don't care anymore about being compatible
+set encoding=utf-8                        " utf-8 all the things
+
+set autoindent                            " keep indentation for new lines
+set shiftwidth=2                          " vim shifts by 2 spaces
+set softtabstop=2                         " as does tab
+set expandtab                             " spaces are my preferred indentation method
+
+set background=dark                       " dark terminal background is default
+set relativenumber                        " line numbers relative to cursor position
+set showcmd                               " show contents of command buffer
+set ruler                                 " show cursor position
+
+set nomodeline                            " disable modelines (i use local-vimrc for that, it's safer)
+
+set incsearch                             " search as you type
+set hlsearch                              " highlight matches
+set ignorecase                            " search case insensitive per default
+
+set noswapfile                            " disable .swp files
+set hidden                                " keep hidden file buffers instead of unloading them
+set t_Co=256                              " we usually have color support in out tty
+
+set nospell                               " disable spell checking (we're mostly in source code files)
+autocmd FileType gitcommit set spell      " re-enable spell checking for commit messages
+
+set wildmenu                              " show auto-complete menu in command mode
+
+set showmatch                             " enable bracket highlights
+set matchpairs=(:),{:},[:],<:>            " highlight all kinds of brackets
+
+set foldenable                            " enable folding generally
+set foldmethod=marker                     " auto-fold by markers
+set foldlevel=0                           " auto-fold from first level on
+
+autocmd FileType vue syntax sync fromstart" fix vue files syntax hiccups
+
+" custome keyboard mappings {{{
+:let mapleader = ","  " leader for custom commands, used by plugins
+inoremap jk <esc>     " allow to use jk to exit insertmode
+tnoremap jk <C-W>N    " allow to use jk to exit terminal mode
+nnoremap <C-h> <C-w>h " remap split navigation to shorter combo
+nnoremap <C-j> <C-w>j " remap split navigation to shorter combo
+nnoremap <C-k> <C-w>k " remap split navigation to shorter combo
+nnoremap <C-l> <C-w>l " remap split navigation to shorter combo
+nnoremap Q <nop>      " disable obnoxious ex mode
+" }}}
+
+" NERDTree plugin {{{ {{{
 set runtimepath^=~/.vim/bundle/nerdtree/
 let g:NERDTreeStatusline=1
 let g:NERDTreeShowLineNumbers=1
+map <Leader>n :NERDTreeToggle<CR>
+" }}}}}}
+
+" vim airline plugin {{{
 set runtimepath^=~/.vim/bundle/vim-airline/
+" }}}
+
+" vim airline theme plugin {{{
 set runtimepath^=~/.vim/bundle/vim-airline-themes/
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 let g:airline_solarized_dark_text = 1
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
+" }}}
+
+" vim gitgutter plugin {{{
 set runtimepath^=~/.vim/bundle/vim-gitgutter/
 let g:gitgutter_map_keys = 0
+" }}}
+
+" vim rspec plugin {{{
 set runtimepath^=~/.vim/bundle/vim-rspec/
 set updatetime=100
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+" }}}
+
+" vim localvimrc plugin {{{
 set runtimepath^=~/.vim/bundle/vim-localvimrc/
 let g:localvimrc_whitelist=['/Users/bsa/src/.*', '/home/bsa/src/.*']
 let g:localvimrc_sandbox=0
+" }}}
+
+" vim gutentags plugin {{{
 set runtimepath^=~/.vim/bundle/vim-gutentags/
 set statusline+=%{gutentags#statusline()}
 let g:gutentags_cache_dir='~/.ctagscache/'
+" }}}
+
+" vim ctrlp plugin {{{
 set runtimepath^=~/.vim/bundle/ctrlp.vim/
 if executable('ag')
   " Use Ag over Grep
@@ -56,19 +104,9 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir']
+" }}}
+
+" syntastic plugin {{{
 set runtimepath^=~/.vim/bundle/syntastic/
-:let mapleader = ","
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-map <Leader>n :NERDTreeToggle<CR>
-inoremap jk <esc>
-tnoremap jk <C-W>N
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap Q <nop>
-autocmd FileType vue syntax sync fromstart
+" }}}
+
