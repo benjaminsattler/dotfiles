@@ -19,7 +19,6 @@ set noswapfile
 set t_Co=256
 set hidden
 set nospell
-autocmd FileType magit set spell
 autocmd FileType gitcommit set spell
 set wildmenu
 set showmatch
@@ -28,11 +27,9 @@ set foldenable
 set foldmethod=marker
 set foldlevel=0
 set modelines=0
-set runtimepath^=~/.vim/bundle/asyncrun.vim/
 set runtimepath^=~/.vim/bundle/nerdtree/
 let g:NERDTreeStatusline=1
 let g:NERDTreeShowLineNumbers=1
-set runtimepath^=~/.vim/bundle/vimagit/
 set runtimepath^=~/.vim/bundle/vim-airline/
 set runtimepath^=~/.vim/bundle/vim-airline-themes/
 let g:airline_theme='solarized'
