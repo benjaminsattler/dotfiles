@@ -45,7 +45,7 @@ set foldenable                            " enable folding generally
 set foldmethod=marker                     " auto-fold by markers
 set foldlevel=0                           " auto-fold from first level on
 
-autocmd FileType vue syntax sync fromstart" fix vue files syntax hiccups
+autocmd FileType vue syntax sync fromstart " fix vue files syntax hiccups
 
 " custome keyboard mappings {{{
 " leader for custom commands, used by plugins
