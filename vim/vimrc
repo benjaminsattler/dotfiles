@@ -8,6 +8,7 @@ set shiftwidth=2                          " vim shifts by 2 spaces
 set softtabstop=2                         " as does tab
 set expandtab                             " spaces are my preferred indentation method
 
+set number								  " show absolute line number at cursor position
 set relativenumber                        " line numbers relative to cursor position
 set showcmd                               " show contents of command buffer
 set ruler                                 " show cursor position
