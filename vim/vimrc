@@ -32,6 +32,7 @@ hi DiffDelete term=bold ctermbg=None ctermfg=5 guibg=DarkMagenta
 " Fold lines of closed folds are lime-ish
 hi Folded term=standout ctermbg=None ctermfg=121 guifg=Cyan guibg=DarkGrey
 hi SpellBad term=reverse ctermbg=None ctermfg=9 gui=undercurl guisp=Red
+hi SyntasticWarning term=reverse ctermbg=None ctermfg=14444 gui=undercurl guisp=Red
 " }}}
 
 set nospell                               " disable spell checking (we're mostly in source code files)
@@ -48,7 +49,7 @@ set foldlevel=0                           " auto-fold from first level on
 
 autocmd FileType vue syntax sync fromstart " fix vue files syntax hiccups
 
-" custome keyboard mappings {{{
+" custom keyboard mappings {{{
 " leader for custom commands, used by plugins
 :let mapleader = ","
 " allow to use jk to exit insertmode
@@ -73,7 +74,8 @@ cnoremap W w
 set runtimepath^=~/.vim/bundle/nerdtree/
 let g:NERDTreeStatusline=1
 let g:NERDTreeShowLineNumbers=1
-map <Leader>n :NERDTreeToggle<CR>
+map <Leader>nn :NERDTreeToggle<CR>
+map <Leader>nf :NERDTreeFind<CR>
 " }}}}}}
 
 " vim airline plugin {{{
