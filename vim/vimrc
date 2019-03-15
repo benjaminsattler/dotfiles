@@ -33,6 +33,7 @@ hi DiffDelete term=bold ctermbg=None ctermfg=5 guibg=DarkMagenta
 hi Folded term=standout ctermbg=None ctermfg=121 guifg=Cyan guibg=DarkGrey
 hi SpellBad term=reverse ctermbg=None ctermfg=9 gui=undercurl guisp=Red
 hi SyntasticWarning term=reverse ctermbg=None ctermfg=14444 gui=undercurl guisp=Red
+hi clear HtmlItalic
 " }}}
 
 set nospell                               " disable spell checking (we're mostly in source code files)
