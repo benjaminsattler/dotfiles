@@ -82,6 +82,7 @@ map <Leader>nf :NERDTreeFind<CR>
 " vim airline plugin {{{
 set runtimepath^=~/.vim/bundle/vim-airline/
 set noshowmode
+let g:airline#extensions#tagbar#enabled = 1
 " }}}
 
 " vim airline theme plugin {{{
@@ -136,3 +137,7 @@ let g:ctrlp_match_window = 'min:4,max:10,results:100'
 set runtimepath^=~/.vim/bundle/syntastic/
 " }}}
 
+" tagbar plugin {{{
+set runtimepath^=~/.vim/bundle/tagbar/
+map <Leader>tt :Tagbar<CR>
+" }}}
