@@ -129,6 +129,7 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir']
+let g:ctrlp_match_window = 'min:4,max:10,results:100'
 " }}}
 
 " syntastic plugin {{{
