@@ -37,7 +37,10 @@ hi clear HtmlItalic
 " }}}
 
 set nospell                               " disable spell checking (we're mostly in source code files)
-autocmd FileType gitcommit set spell      " re-enable spell checking for commit messages
+augroup Git
+  autocmd!
+  autocmd FileType gitcommit set spell      " re-enable spell checking for commit messages
+augroup END
 
 set wildmenu                              " show auto-complete menu in command mode
 
@@ -48,7 +51,10 @@ set foldenable                            " enable folding generally
 set foldmethod=marker                     " auto-fold by markers
 set foldlevel=0                           " auto-fold from first level on
 
-autocmd FileType vue syntax sync fromstart " fix vue files syntax hiccups
+augroup Vue
+  autocmd!
+  autocmd FileType vue syntax sync fromstart " fix vue files syntax hiccups
+augroup END
 
 " custom keyboard mappings {{{
 " leader for custom commands, used by plugins
