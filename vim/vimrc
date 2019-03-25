@@ -71,14 +71,6 @@ nnoremap Q <nop>
 cnoremap W w
 " }}}
 
-" NERDTree plugin {{{
-set runtimepath^=~/.vim/bundle/nerdtree/
-let g:NERDTreeStatusline=1
-let g:NERDTreeShowLineNumbers=1
-map <Leader>nn :NERDTreeToggle<CR>
-map <Leader>nf :NERDTreeFind<CR>
-" }}}}}}
-
 " vim airline plugin {{{
 set runtimepath^=~/.vim/bundle/vim-airline/
 set noshowmode
@@ -140,4 +132,17 @@ set runtimepath^=~/.vim/bundle/syntastic/
 " tagbar plugin {{{
 set runtimepath^=~/.vim/bundle/tagbar/
 map <Leader>tt :Tagbar<CR>
+" }}}
+
+" ranger plugin {{{
+set runtimepath^=~/.vim/bundle/ranger.vim/
+map <leader>rr :RangerEdit<cr>
+map <leader>rv :RangerVSplit<cr>
+map <leader>rs :RangerSplit<cr>
+map <leader>rt :RangerTab<cr>
+map <leader>ri :RangerInsert<cr>
+map <leader>ra :RangerAppend<cr>
+map <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
+map <leader>rd :RangerCD<cr>
+map <leader>rld :RangerLCD<cr>
 " }}}
