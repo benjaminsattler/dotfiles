@@ -155,4 +155,7 @@ map <leader>ra :RangerAppend<cr>
 map <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
 map <leader>rd :RangerCD<cr>
 map <leader>rld :RangerLCD<cr>
+
+" pug syntax plugin {{{
+set runtimepath^=~/.vim/bundle/vim-pug/
 " }}}
