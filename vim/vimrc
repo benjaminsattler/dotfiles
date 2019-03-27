@@ -133,6 +133,7 @@ if executable('ag')
 endif
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir']
 let g:ctrlp_match_window = 'min:4,max:10,results:100'
+let g:ctrlp_cmd = 'CtrlPTag'
 " }}}
 
 " syntastic plugin {{{
