@@ -43,6 +43,7 @@ augroup Git
 augroup END
 
 set wildmenu                              " show auto-complete menu in command mode
+set wildignore=*/node_modules/*,*/.git/*,*/vendor/*
 
 set showmatch                             " enable bracket highlights
 set matchpairs=(:),{:},[:],<:>            " highlight all kinds of brackets
@@ -134,6 +135,8 @@ endif
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir']
 let g:ctrlp_match_window = 'min:4,max:10,results:100'
 let g:ctrlp_cmd = 'CtrlPTag'
+let g:ctrlp_custom_ignore = '.*\/(node_modules\|DS_Store\|\.git\|vendor)\/.*'
+let g:ctrlp_lazy_update = 1
 " }}}
 
 " syntastic plugin {{{
