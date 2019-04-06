@@ -164,3 +164,7 @@ map <leader>rld :RangerLCD<cr>
 " pug syntax plugin {{{
 set runtimepath^=~/.vim/bundle/vim-pug/
 " }}}
+
+" vim fugitive plugin {{{
+set runtimepath^=~/.vim/bundle/vim-fugitive/
+" }}}
