@@ -153,6 +153,7 @@ set runtimepath^=~/.vim/bundle/syntastic/
 " tagbar plugin {{{
 set runtimepath^=~/.vim/bundle/tagbar/
 map <Leader>tt :Tagbar<CR>
+let g:tagbar_autofocus = 1
 " }}}
 
 " ranger plugin {{{
