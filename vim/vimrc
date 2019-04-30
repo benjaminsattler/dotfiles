@@ -43,7 +43,7 @@ augroup Git
 augroup END
 
 set wildmenu                              " show auto-complete menu in command mode
-set wildignore=*/node_modules/*,*/.git/*,*/vendor/*
+set wildignore=*/node_modules/*,*/.git/*,*/vendor/*,*/var/*
 
 set showmatch                             " enable bracket highlights
 set matchpairs=(:),{:},[:],<:>            " highlight all kinds of brackets
@@ -134,9 +134,14 @@ if executable('ag')
 endif
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir']
 let g:ctrlp_match_window = 'min:4,max:10,results:100'
-let g:ctrlp_cmd = 'CtrlPTag'
-let g:ctrlp_custom_ignore = '.*\/(node_modules\|DS_Store\|\.git\|vendor)\/.*'
-let g:ctrlp_lazy_update = 1
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = '.*\/(node_modules\|DS_Store\|\.git\|vendor\|var)\/.*'
+let g:ctrlp_working_path_mode = 'w'
+" }}}
+
+" vim ctrlp-py-matcher plugin {{{
+set runtimepath^=~/.vim/bundle/ctrlp-py-matcher/
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " }}}
 
 " syntastic plugin {{{
