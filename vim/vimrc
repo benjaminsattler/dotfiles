@@ -100,6 +100,8 @@ let g:airline_skip_empty_sections = 1
 " vim gitgutter plugin {{{
 set runtimepath^=~/.vim/bundle/vim-gitgutter/
 let g:gitgutter_map_keys = 0
+nnoremap <leader>gp :GitGutterPreviewHunk<CR>
+nnoremap <leader>gu :GitGutterUndoHunk<CR>
 " }}}
 
 " vim rspec plugin {{{
