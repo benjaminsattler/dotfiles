@@ -21,6 +21,9 @@ set ignorecase                            " search case insensitive per default
 set noswapfile                            " disable .swp files
 set hidden                                " keep hidden file buffers instead of unloading them
 
+set splitright							  " split to right pane
+set splitbelow							  " split to bottom pane
+
 " color customizations {{{
 set background=dark                       " dark terminal background is default
 " Changes have blue-ish font color
