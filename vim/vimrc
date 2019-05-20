@@ -8,18 +8,26 @@ set shiftwidth=2                          " vim shifts by 2 spaces
 set softtabstop=2                         " as does tab
 set expandtab                             " spaces are my preferred indentation method
 
-set number								  " show absolute line number at cursor position
-set relativenumber                        " line numbers relative to cursor position
+augroup Numbertoggle                      " toggle relative line numbers
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+augroup END
+
+set number                                " show absolute line number at cursor position
 set showcmd                               " show contents of command buffer
 set ruler                                 " show cursor position
 set nomodeline                            " disable modelines (i use local-vimrc for that, it's safer)
 
 set incsearch                             " search as you type
 set hlsearch                              " highlight matches
-set ignorecase                            " search case insensitive per default
+set ignorecase                            " search case insensitive per default...
+set smartcase                             " ...but only when there is no uppercase character
 
 set noswapfile                            " disable .swp files
 set hidden                                " keep hidden file buffers instead of unloading them
+
+set ttyfast                               " improve drawing speed
 
 " color customizations {{{
 set background=dark                       " dark terminal background is default
@@ -39,10 +47,11 @@ hi clear HtmlItalic
 set nospell                               " disable spell checking (we're mostly in source code files)
 augroup Git
   autocmd!
-  autocmd FileType gitcommit set spell      " re-enable spell checking for commit messages
+  autocmd FileType gitcommit set spell    " re-enable spell checking for commit messages
 augroup END
 
 set wildmenu                              " show auto-complete menu in command mode
+set wildmode=longest:full,full            " make autocomplete more intelligent
 set wildignore=*/node_modules/*,*/.git/*,*/vendor/*,*/var/*
 
 set showmatch                             " enable bracket highlights
