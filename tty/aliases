@@ -1,3 +1,5 @@
 alias r="ranger"
 alias pods="watch kubectl get pods"
 alias k="kubectl"
+
+type colorls > /dev/null 2>&1 && alias ls="colorls -Al --gs"
