@@ -159,7 +159,13 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " }}}
 
 " syntastic plugin {{{
-set runtimepath^=~/.vim/bundle/syntastic/
+"set runtimepath^=~/.vim/bundle/syntastic/
+"let g:syntastic_ruby_checkers = ['rubocop']
+"let g:syntastic_ruby_rubocop_exec = '/usr/local/bin/rubocop'
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 0
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 " }}}
 
 " tagbar plugin {{{
@@ -187,4 +193,8 @@ set runtimepath^=~/.vim/bundle/vim-pug/
 
 " vim fugitive plugin {{{
 set runtimepath^=~/.vim/bundle/vim-fugitive/
+" }}}
+
+" vim coc plugin {{{
+set runtimepath^=~/.vim/bundle/coc.nvim/
 " }}}
