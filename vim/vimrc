@@ -69,6 +69,13 @@ augroup Vue
   autocmd FileType vue syntax sync fromstart " fix vue files syntax hiccups
 augroup END
 
+augroup Terminal
+  autocmd!
+  if exists("#TerminalOpen") == "1"
+    autocmd TerminalOpen * setlocal nonumber norelativenumber
+  endif
+augroup END
+
 " custom keyboard mappings {{{
 " leader for custom commands, used by plugins
 :let mapleader = ","
