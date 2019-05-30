@@ -4,8 +4,9 @@ set nocompatible                          " we certainly don't care anymore abou
 set encoding=utf-8                        " utf-8 all the things
 
 set autoindent                            " keep indentation for new lines
-set shiftwidth=2                          " vim shifts by 2 spaces
-set softtabstop=2                         " as does tab
+set shiftwidth=4                          " vim shifts by 2 spaces
+set softtabstop=4                         " as does tab
+set tabstop=4                             " existing tabs count as 2 spaces
 set expandtab                             " spaces are my preferred indentation method
 
 augroup Numbertoggle                      " toggle relative line numbers
