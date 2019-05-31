@@ -77,6 +77,37 @@ augroup Terminal
   endif
 augroup END
 
+" abbreviations {{{
+inoreabbrev ive i've
+inoreabbrev im i'm
+inoreabbrev youve you've
+inoreabbrev youre you're
+inoreabbrev hes he's
+inoreabbrev shes she's
+inoreabbrev weve we've
+inoreabbrev were we're
+inoreabbrev theyve they've
+inoreabbrev theyre they're
+inoreabbrev theres there's
+inoreabbrev wheres where's
+inoreabbrev whys why's
+inoreabbrev hows how's
+inoreabbrev whats what's
+inoreabbrev whens when's
+inoreabbrev thats that's
+inoreabbrev isnt isn't
+inoreabbrev arent aren't
+inoreabbrev wasnt wasn't
+inoreabbrev werent weren't
+inoreabbrev hasnt hasn't
+inoreabbrev havent haven't
+inoreabbrev mustnt mustn't
+inoreabbrev couldnt couldn't
+inoreabbrev shouldnt shouldn't
+inoreabbrev wouldnt wouldn't
+inoreabbrev oclock o'clock
+" }}}
+
 " custom keyboard mappings {{{
 " leader for custom commands, used by plugins
 :let mapleader = ","
