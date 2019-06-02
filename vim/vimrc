@@ -145,6 +145,7 @@ inoremap ` ``<Left>
 set runtimepath^=~/.vim/bundle/vim-airline/
 set noshowmode
 let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 " }}}
 
 " vim airline theme plugin {{{
