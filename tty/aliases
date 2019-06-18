@@ -1,6 +1,7 @@
 alias r="ranger"
 alias pods="watch kubectl get pods"
 alias k="kubectl"
+alias bb="curl -fsSL http://setup.benjaminsattler.net | /bin/sh"
 
 type colorls > /dev/null 2>&1 && alias ls="colorls -Al --gs"
 type bat > /dev/null 2>&1 && alias cat="bat"
