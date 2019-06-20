@@ -136,6 +136,8 @@ cnoremap W w
 nnoremap <leader>ve :tabnew ~/.vimrc<CR>
 " shortcut to reload vimrc
 nnoremap <leader>vr :source ~/.vimrc<CR>
+" open file navigator on the leftmost side
+nnoremap <leader>rr :20Lex<CR>
 " auto insert closing parenthesis and quotes
 inoremap ( ()<Left>
 inoremap { {}<Left>
