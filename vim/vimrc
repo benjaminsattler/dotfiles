@@ -172,10 +172,10 @@ nnoremap <leader>gu :GitGutterUndoHunk<CR>
 " vim rspec plugin {{{
 set runtimepath^=~/.vim/bundle/vim-rspec/
 set updatetime=100
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>s :call RunNearestSpec()<CR>
+nnoremap <Leader>l :call RunLastSpec()<CR>
+nnoremap <Leader>a :call RunAllSpecs()<CR>
 " }}}
 
 " vim localvimrc plugin {{{
@@ -202,7 +202,7 @@ let g:gutentags_cache_dir='~/.ctagscache/'
 
 " tagbar plugin {{{
 set runtimepath^=~/.vim/bundle/tagbar/
-map <Leader>tt :Tagbar<CR>
+nnoremap <Leader>tt :Tagbar<CR>
 let g:tagbar_autofocus = 1
 " }}}
 
