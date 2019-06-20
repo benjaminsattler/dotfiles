@@ -118,3 +118,12 @@ if [ -f "${HOME}/google-cloud-sdk/completion.zsh.inc" ]; then . "${HOME}/google-
 
 # Python3 executables
 if [ -d "${HOME}/Library/Python/3.7/bin" ]; then PATH="${HOME}/Library/Python/3.7/bin:${PATH}"; fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_COMPLETION_TRIGGER="$"
+export FZF_DEFAULT_OPTS="--border --preview='bat --color=always {}' -1 -0"
+export FZF_DEFAULT_COMMAND="git ls-tree -r --name-only HEAD || ag %s -l -g ''"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

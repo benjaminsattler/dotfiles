@@ -65,6 +65,11 @@ set foldenable                            " enable folding generally
 set foldmethod=marker                     " auto-fold by markers
 set foldlevel=0                           " auto-fold from first level on
 
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
 augroup Vue
   autocmd!
   autocmd FileType vue syntax sync fromstart " fix vue files syntax hiccups
@@ -185,27 +190,6 @@ set statusline+=%{gutentags#statusline()}
 let g:gutentags_cache_dir='~/.ctagscache/'
 " }}}
 
-" vim ctrlp plugin {{{
-set runtimepath^=~/.vim/bundle/ctrlp.vim/
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir']
-let g:ctrlp_match_window = 'min:4,max:10,results:100'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = '.*\/(node_modules\|DS_Store\|\.git\|vendor\|var)\/.*'
-let g:ctrlp_working_path_mode = 'w'
-" }}}
-
-" vim ctrlp-py-matcher plugin {{{
-set runtimepath^=~/.vim/bundle/ctrlp-py-matcher/
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-" }}}
-
 " syntastic plugin {{{
 "set runtimepath^=~/.vim/bundle/syntastic/
 "let g:syntastic_ruby_checkers = ['rubocop']
@@ -222,19 +206,6 @@ map <Leader>tt :Tagbar<CR>
 let g:tagbar_autofocus = 1
 " }}}
 
-" ranger plugin {{{
-set runtimepath^=~/.vim/bundle/ranger.vim/
-map <leader>rr :RangerEdit<cr>
-map <leader>rv :RangerVSplit<cr>
-map <leader>rs :RangerSplit<cr>
-map <leader>rt :RangerTab<cr>
-map <leader>ri :RangerInsert<cr>
-map <leader>ra :RangerAppend<cr>
-map <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
-map <leader>rd :RangerCD<cr>
-map <leader>rld :RangerLCD<cr>
-" }}}
-
 " pug syntax plugin {{{
 set runtimepath^=~/.vim/bundle/vim-pug/
 " }}}
@@ -245,4 +216,12 @@ set runtimepath^=~/.vim/bundle/vim-fugitive/
 
 " vim coc plugin {{{
 set runtimepath^=~/.vim/bundle/coc.nvim/
+" }}}
+
+" FZF plugin {{{
+set rtp+=/usr/local/opt/fzf
+" }}}
+
+" fzf.vim plugin {{{
+set runtimepath^=~/.vim/bundle/fzf.vim/
 " }}}
