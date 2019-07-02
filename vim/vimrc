@@ -251,4 +251,5 @@ nnoremap <Leader>zt :Tags<CR>
 nnoremap <Leader>zb :Buffers<CR>
 nnoremap <Leader>zc :BCommits<CR>
 nnoremap <Leader>zh :History<CR>
+nnoremap <Leader>zs :GFiles?<CR>
 " }}}
