@@ -155,6 +155,7 @@ let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#gutentags#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#branch#displayed_head_limit=20
 " }}}
 
 " vim airline theme plugin {{{
