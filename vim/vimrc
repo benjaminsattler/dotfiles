@@ -188,6 +188,8 @@ set runtimepath^=~/.vim/bundle/vim-gitgutter/
 let g:gitgutter_map_keys = 0
 nnoremap <leader>gp :GitGutterPreviewHunk<CR>
 nnoremap <leader>gu :GitGutterUndoHunk<CR>
+nnoremap ]h :GitGutterNextHunk<CR>
+nnoremap [h :GitGutterPrevHunk<CR>
 " }}}
 
 " vim rspec plugin {{{
