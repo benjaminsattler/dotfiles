@@ -153,7 +153,7 @@ nnoremap <leader>ve :tabnew ~/.vimrc<CR>
 " shortcut to reload vimrc
 nnoremap <leader>vr :source ~/.vimrc<CR>
 " open file navigator on the leftmost side
-nnoremap <leader>rr :20Lex<CR>
+nnoremap <leader>rr :20Ver<CR>
 " auto insert closing parenthesis and quotes
 inoremap ( ()<Left>
 inoremap { {}<Left>
@@ -213,16 +213,6 @@ set statusline+=%{gutentags#statusline()}
 let g:gutentags_cache_dir='~/.ctagscache/'
 " }}}
 
-" syntastic plugin {{{
-"set runtimepath^=~/.vim/bundle/syntastic/
-"let g:syntastic_ruby_checkers = ['rubocop']
-"let g:syntastic_ruby_rubocop_exec = '/usr/local/bin/rubocop'
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 0
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-" }}}
-
 " tagbar plugin {{{
 set runtimepath^=~/.vim/bundle/tagbar/
 nnoremap <Leader>tt :Tagbar<CR>
@@ -259,7 +249,7 @@ endfunction
 " }}}
 
 " FZF plugin {{{
-set rtp+=/usr/local/opt/fzf
+set runtimepath^=/usr/local/opt/fzf/
 " }}}
 
 " fzf.vim plugin {{{
