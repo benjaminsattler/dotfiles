@@ -1,8 +1,14 @@
-alias r="ranger"
-alias pods="watch kubectl get pods"
-alias k="kubectl"
+type ranger > /dev/null 2>&1 && alias r="ranger"
+type kubectl > /dev/null 2>&1 && alias pods="watch kubectl get pods"
+type kubectl > /dev/null 2>&1 && alias k="kubectl"
 alias bb="curl -fsSL http://setup.benjaminsattler.net | /bin/sh"
 
 type colorls > /dev/null 2>&1 && alias ls="colorls -Al --gs"
 type bat > /dev/null 2>&1 && alias cat="bat"
-type diff-so-fancy > /dev/null 2>&1 && alias diff="diff-so-fancy"
+type git > /dev/null 2>&1 && alias g="git"
+type git > /dev/null 2>&1 && alias gs="git status"
+type git > /dev/null 2>&1 && alias gc="git commit"
+type git > /dev/null 2>&1 && alias gd="git diff"
+type git > /dev/null 2>&1 && alias gdc="git diff --cached"
+type git > /dev/null 2>&1 && alias ga="git add"
+
