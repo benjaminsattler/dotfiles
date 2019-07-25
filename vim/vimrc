@@ -254,7 +254,7 @@ set runtimepath^=/usr/local/opt/fzf/
 
 " fzf.vim plugin {{{
 set runtimepath^=~/.vim/bundle/fzf.vim/
-let $FZF_DEFAULT_OPTS = '--border'
+let $FZF_DEFAULT_OPTS = '--border --bind=ctrl-n:page-down,ctrl-p:page-up'
 nnoremap <Leader>zf :Files<CR>
 nnoremap <Leader>zt :Tags<CR>
 nnoremap <Leader>zb :Buffers<CR>
