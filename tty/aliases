@@ -14,3 +14,4 @@ type git > /dev/null 2>&1 && alias ga="git add"
 type git > /dev/null 2>&1 && alias gpl="git pull"
 type git > /dev/null 2>&1 && alias gps="git push origin"
 
+type trash > /dev/null 2>&1 && alias rm="trash"
