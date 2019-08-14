@@ -31,6 +31,7 @@ augroup Numbertoggle                      " toggle relative line numbers
   endfunction
 augroup END
 
+set scrolloff=2                           " always show two more lines at the window border
 set number                                " show absolute line number at cursor position
 set showcmd                               " show contents of command buffer
 set ruler                                 " show cursor position
