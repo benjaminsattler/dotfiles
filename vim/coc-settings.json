@@ -1,0 +1,10 @@
+{
+ "languageserver": {
+    "phplang": {
+      "command": "php",
+      "args": ["~/src/php-language-server/bin/php-language-server.php"],
+      "filetypes": ["php"],
+      "shell": true
+    }
+  }
+}
