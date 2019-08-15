@@ -130,6 +130,15 @@ inoreabbrev wouldnt wouldn't
 inoreabbrev oclock o'clock
 " }}}
 
+function ToggleWhitespace()
+    if &syntax == 'whitespace'
+        execute 'set syntax=' . b:original_syntax
+    else
+        let b:original_syntax = &syntax
+        set syntax=whitespace
+    endif
+endfunction
+
 " custom keyboard mappings {{{
 " leader for custom commands, used by plugins
 :let mapleader = ","
@@ -155,6 +164,8 @@ nnoremap <leader>ve :tabnew ~/.vimrc<CR>
 nnoremap <leader>vr :source ~/.vimrc<CR>
 " open file navigator on the leftmost side
 nnoremap <leader>rr :20Vex<CR>
+" toggle whitespace display
+nnoremap <leader><space> :call ToggleWhitespace()<CR>
 " auto insert closing parenthesis and quotes
 inoremap ( ()<Left>
 inoremap { {}<Left>
