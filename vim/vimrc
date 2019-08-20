@@ -73,7 +73,7 @@ augroup END
 
 set wildmenu                              " show auto-complete menu in command mode
 set wildmode=longest:full,full            " make autocomplete more intelligent
-set wildignore=*/node_modules/*,*/.git/*,*/vendor/*,*/var/*
+set wildignore=*/node_modules/*,node_modules/*,*/.git/*,*/vendor/*,*/var/*,var/*
 
 set showmatch                             " enable bracket highlights
 set matchpairs=(:),{:},[:],<:>            " highlight all kinds of brackets
@@ -84,7 +84,7 @@ set foldlevel=0                           " auto-fold from first level on
 
 if executable('ag')
   " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --vimgrep
 endif
 
 augroup Vue
