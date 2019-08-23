@@ -29,6 +29,7 @@ export HM_APPLICATION_ENV=development
 export PATH=$GOPATH:$PATH
 export PATH=/usr/local/opt/php@7.1/bin/:$PATH
 export PATH=/usr/local/opt/ruby/bin/:$PATH
+export PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
