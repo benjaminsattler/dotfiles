@@ -68,8 +68,10 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg9
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  npm
   kubectl
   rake
+  yarn
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
