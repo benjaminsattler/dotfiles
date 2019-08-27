@@ -158,6 +158,8 @@ nnoremap <C-l> <C-w>l
 nnoremap Q <nop>
 " remap W to w
 cnoremap W w
+" disable search highlighting
+nnoremap <leader>ch :nohlsearch<CR>
 " shortcut to edit vimrc
 nnoremap <leader>ve :tabnew ~/.vimrc<CR>
 " shortcut to reload vimrc
