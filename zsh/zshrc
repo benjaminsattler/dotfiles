@@ -71,6 +71,8 @@ plugins=(
   npm
   kubectl
   rake
+  tmux
+  tmuxinator
   yarn
   zsh-autosuggestions
   zsh-syntax-highlighting
