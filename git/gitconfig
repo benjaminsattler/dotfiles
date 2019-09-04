@@ -1,12 +1,9 @@
 [include]
-    path = ~/.my_gitconfig
+	path = ~/.my_gitconfig
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = /usr/local/bin/vim
 	pager = /usr/local/Cellar/git/$(ls -1 /usr/local/Cellar/git/ | sort -dnr | head -1)/share/git-core/contrib/diff-highlight/diff-highlight | less
 [alias]
-  cof = !git for-each-ref --format='%(refname:short)' refs/heads | fzf --preview='git log --oneline --color=always --first-parent --no-merges {}'| xargs git checkout
-  fac = "!f() { git fetch && git checkout $1; }; f"
-  co = checkout
-  s = status
-  a = add
+	cof = !git branch -r --format='%(refname:short)' | fzf --preview='git log --oneline --color=always --first-parent --no-merges `git merge-base develop {}`..{}'| sed -e 's/^origin\\///' | xargs git co --guess
+	co = checkout
