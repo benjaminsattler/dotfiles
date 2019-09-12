@@ -84,7 +84,7 @@ set foldlevel=0                           " auto-fold from first level on
 
 if executable('ag')
   " Use Ag over Grep
-  set grepprg=ag\ --vimgrep
+  set grepprg=ag\ --vimgrep\ --ignore=var/\ --ignore=vendor/\ --ignore=var/
 endif
 
 augroup Vue
@@ -158,6 +158,8 @@ nnoremap <C-l> <C-w>l
 nnoremap Q <nop>
 " remap W to w
 cnoremap W w
+" make Y behave as D, C, etc
+cnoremap Y y$
 " disable search highlighting
 nnoremap <leader>ch :nohlsearch<CR>
 " shortcut to edit vimrc
