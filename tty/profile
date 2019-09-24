@@ -22,18 +22,23 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
-export CGO_ENABLED=0
+export HM_APPLICATION_ENV=development
 export EDITOR=vim
+
 export FZF_COMPLETION_TRIGGER="$"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_COMMAND="ag $dir -l -g '' || git ls-tree -r --name-only HEAD"
 export FZF_DEFAULT_OPTS="--border --preview='bat --color=always {} | echo {}' -1 -0 --bind=ctrl-n:page-down,ctrl-p:page-up"
+
+export CGO_ENABLED=0
 export GOARCH=amd64
 export GOOS=darwin
 export GOPATH=$HOME/go/bin
-export HM_APPLICATION_ENV=development
-export JAVA_HOME=/usr/libexec/java_home
 export PATH=$GOPATH:$PATH
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-13.jdk/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH
+
 export PATH=/usr/local/opt/mysql-client/bin:$PATH
 export PATH=/usr/local/opt/php@7.1/bin/:$PATH
 export PATH=/usr/local/opt/ruby/bin/:$PATH
