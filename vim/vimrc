@@ -166,7 +166,7 @@ nnoremap <C-l> <C-w>l
 " disable obnoxious ex mode
 nnoremap Q <nop>
 " remap W to w
-cnoremap W w
+command W w
 " make Y behave as D, C, etc
 cnoremap Y y$
 " disable search highlighting
@@ -187,6 +187,10 @@ inoremap < <><Left>
 inoremap " ""<Left>
 inoremap ' ''<Left>
 inoremap ` ``<Left>
+" grep should not jump to the first result and open quickfix list
+command -nargs=+ -complete=file Grep grep! <args> | execute ":copen"
+" lgrep should not jump to the first result and open location list
+command -nargs=+ -complete=file Lgrep lgrep! <args> | execute ":lopen"
 " }}}
 
 " vim airline plugin {{{
