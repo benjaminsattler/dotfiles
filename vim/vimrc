@@ -51,7 +51,7 @@ set splitright                            " split to right pane
 set splitbelow                            " split to bottom pane
 
 " color customizations {{{
-set background=dark                       " dark terminal background is default
+set background=light                       " light terminal background is default
 " Changes have blue-ish font color
 hi DiffChange term=bold ctermbg=None ctermfg=4 guibg=DarkMagenta
 " Additions have green-ish font color
@@ -59,9 +59,9 @@ hi DiffAdd term=bold ctermbg=None ctermfg=2 guibg=DarkMagenta
 " Deletions have red-ish font color
 hi DiffDelete term=bold ctermbg=None ctermfg=5 guibg=DarkMagenta
 " Fold lines of closed folds are lime-ish
-hi Folded term=standout ctermbg=None ctermfg=121 guifg=Cyan guibg=DarkGrey
 hi SpellBad term=reverse ctermbg=None ctermfg=9 gui=undercurl guisp=Red
 hi SyntasticWarning term=reverse ctermbg=None ctermfg=14444 gui=undercurl guisp=Red
+hi Search term=reverse ctermbg=black ctermfg=white
 hi clear HtmlItalic
 " }}}
 
@@ -206,8 +206,8 @@ let g:airline#extensions#branch#displayed_head_limit=20
 " vim airline theme plugin {{{
 set runtimepath^=~/.vim/bundle/vim-airline-themes/
 let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
-let g:airline_solarized_dark_text = 1
+let g:airline_solarized_bg='light'
+"let g:airline_solarized_dark_text = 1
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 " }}}
