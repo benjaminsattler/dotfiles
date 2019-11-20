@@ -194,6 +194,8 @@ inoremap ` ``<Left>
 command -nargs=+ -complete=file Grep grep! <args> | execute ":copen"
 " lgrep should not jump to the first result and open location list
 command -nargs=+ -complete=file Lgrep lgrep! <args> | execute ":lopen"
+" copy the current file path to the clipboard
+nnoremap <leader>cp :let @*=expand('%')<CR>
 " }}}
 
 " vim airline plugin {{{
