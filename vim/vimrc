@@ -163,6 +163,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 " remap split navigation to shorter combo
 nnoremap <C-l> <C-w>l
+" handy quickfix window commands
+nnoremap q] :cnext<CR>
+nnoremap q[ :cprevious<CR>
 " disable obnoxious ex mode
 nnoremap Q <nop>
 " remap W to w
