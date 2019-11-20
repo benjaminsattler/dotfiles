@@ -119,3 +119,6 @@ output.even-row = ""
 [alias_dsn]
 # example_dsn = mysql://[user[:password]@][host][:port][/dbname]
 percona42 = mysql://development:development@percona-a42.c.dev-shop-real.internal/hm_live
+percona43 = mysql://development:development@percona-a43.c.dev-shop-real.internal/hm_live
+percona44 = mysql://development:development@percona-a44.c.dev-shop-real.internal/hm_live
+percona45 = mysql://development:development@percona-a45.c.dev-shop-real.internal/hm_live
