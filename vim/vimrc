@@ -2,12 +2,14 @@ syntax on                                 " enable syntax highlighting
 filetype plugin indent on                 " enable filetype and indentation plugins
 set nocompatible                          " we certainly don't care anymore about being compatible
 set encoding=utf-8                        " utf-8 all the things
-
 set autoindent                            " keep indentation for new lines
+
 set shiftwidth=4                          " vim shifts by 2 spaces
 set softtabstop=4                         " as does tab
 set tabstop=4                             " existing tabs count as 2 spaces
 set expandtab                             " spaces are my preferred indentation method
+set textwidth=80                          " automatically wrap inserted text at 80 chars width
+set colorcolumn=80                        " display 80 chars text width limit
 
 augroup Numbertoggle                      " toggle relative line numbers
   autocmd!
@@ -63,6 +65,9 @@ hi SpellBad term=reverse ctermbg=None ctermfg=9 gui=undercurl guisp=Red
 hi SyntasticWarning term=reverse ctermbg=None ctermfg=14444 gui=undercurl guisp=Red
 hi Search term=reverse ctermbg=black ctermfg=white
 hi clear HtmlItalic
+
+au BufEnter,BufNew,Syntax * hi EOLWhitespace guifg=red guibg=red ctermfg=red ctermbg=red
+au BufEnter,BufNew,Syntax * match EOLWhitespace /\s\+$/
 " }}}
 
 set nospell                               " disable spell checking (we're mostly in source code files)
