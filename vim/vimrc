@@ -314,3 +314,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 " }}}
 
+" {{{ editorconfig files
+set runtimepath^=~/.vim/bundle/editorconfig-vim/
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+" }}}
