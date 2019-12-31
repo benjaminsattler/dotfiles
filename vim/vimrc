@@ -173,7 +173,7 @@ nnoremap q[ :cprevious<CR>
 " disable obnoxious ex mode
 nnoremap Q <nop>
 " remap W to w
-command W w
+command! W w
 " make Y behave as D, C, etc
 cnoremap Y y$
 " disable search highlighting
@@ -195,9 +195,9 @@ inoremap " ""<Left>
 inoremap ' ''<Left>
 inoremap ` ``<Left>
 " grep should not jump to the first result and open quickfix list
-command -nargs=+ -complete=file Grep grep! <args> | execute ":copen"
+command! -nargs=+ -complete=file Grep grep! <args> | execute ":clist"
 " lgrep should not jump to the first result and open location list
-command -nargs=+ -complete=file Lgrep lgrep! <args> | execute ":lopen"
+command! -nargs=+ -complete=file Lgrep lgrep! <args> | execute ":llist"
 " copy the current file path to the clipboard
 nnoremap <leader>cp :let @*=expand('%')<CR>
 " }}}
