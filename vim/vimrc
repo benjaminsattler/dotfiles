@@ -200,6 +200,8 @@ command! -nargs=+ -complete=file Grep grep! <args> | execute ":clist"
 command! -nargs=+ -complete=file Lgrep lgrep! <args> | execute ":llist"
 " copy the current file path to the clipboard
 nnoremap <leader>cp :let @*=expand('%')<CR>
+" search for all TODOs in the current folder
+nnoremap <leader>td :Grep TODO<CR>
 " }}}
 
 " vim airline plugin {{{
@@ -228,15 +230,6 @@ nnoremap <leader>gp :GitGutterPreviewHunk<CR>
 nnoremap <leader>gu :GitGutterUndoHunk<CR>
 nnoremap ]h :GitGutterNextHunk<CR>
 nnoremap [h :GitGutterPrevHunk<CR>
-" }}}
-
-" vim rspec plugin {{{
-set runtimepath^=~/.vim/bundle/vim-rspec/
-set updatetime=100
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
-nnoremap <Leader>a :call RunAllSpecs()<CR>
 " }}}
 
 " vim localvimrc plugin {{{
@@ -306,6 +299,9 @@ set runtimepath^=~/.vim/bundle/syntastic/
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_ruby_rubocop_exec = '/usr/local/bin/rubocop'
 
+let g:syntastic_typescript_checkers = ['eslint']
+let g:syntastic_typescript_eslint_exec = 'node_modules/.bin/eslint'
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
@@ -316,4 +312,13 @@ let g:syntastic_aggregate_errors = 1
 " {{{ editorconfig files
 set runtimepath^=~/.vim/bundle/editorconfig-vim/
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+" }}}
+
+" {{{ vim-test plugin
+set runtimepath^=~/.vim/bundle/vim-test
+nmap <Leader>tn :TestNearest<CR>
+nmap <Leader>tf :TestFile<CR>
+nmap <Leader>ts :TestSuite<CR>
+nmap <Leader>tl :TestLast<CR>
+nmap <Leader>tg :TestVisit<CR>
 " }}}
