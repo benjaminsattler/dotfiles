@@ -2,7 +2,7 @@
 	path = ~/.my_gitconfig
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = /usr/local/bin/vim
+	editor = vim
 	pager = /usr/local/Cellar/git/$(ls -1 /usr/local/Cellar/git/ | sort -dnr | head -1)/share/git-core/contrib/diff-highlight/diff-highlight | less
 [alias]
 	cof = !git branch -r --format='%(refname:short)' | fzf --preview='git log --oneline --color=always --first-parent --no-merges `git merge-base develop {}`..{}'| sed -e 's/^origin\\///' | xargs git co --guess
