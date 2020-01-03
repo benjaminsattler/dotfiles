@@ -266,9 +266,6 @@ nmap gi <Plug>(coc-implementation)
 nmap gr <Plug>(coc-references)
 imap <expr> <c-space> coc#refresh()
 nmap <leader>cd :call <SID>show_documentation()<CR>
-nmap <leader>ci <Plug>(coc-diagnostic-info)<CR>
-nmap [c <Plug>(coc-diagnostic-prev)
-nmap ]c <Plug>(coc-diagnostic-next)
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -294,21 +291,6 @@ nnoremap <Leader>zh :History<CR>
 nnoremap <Leader>zs :GFiles?<CR>
 " }}}
 
-" {{{ syntastic
-set runtimepath^=~/.vim/bundle/syntastic/
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_ruby_rubocop_exec = '/usr/local/bin/rubocop'
-
-let g:syntastic_typescript_checkers = ['eslint']
-let g:syntastic_typescript_eslint_exec = 'node_modules/.bin/eslint'
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
-" }}}
-
 " {{{ editorconfig files
 set runtimepath^=~/.vim/bundle/editorconfig-vim/
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
@@ -321,4 +303,9 @@ nmap <Leader>tf :TestFile<CR>
 nmap <Leader>ts :TestSuite<CR>
 nmap <Leader>tl :TestLast<CR>
 nmap <Leader>tg :TestVisit<CR>
+" }}}
+
+" {{{ ale
+set runtimepath^=~/.vim/bundle/ale
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 " }}}
