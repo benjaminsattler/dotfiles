@@ -53,8 +53,14 @@ set splitright                            " split to right pane
 set splitbelow                            " split to bottom pane
 
 " color customizations {{{
-set background=dark                       " dark terminal background is default
-hi! link Pmenu WildMenu
+if !exists('$ITERM_PROFILE') || $ITERM_PROFILE == 'Dark'
+    set background=dark                   " dark terminal background is default
+    hi! link Pmenu WildMenu
+    hi! link PmenuSel Normal
+else
+    set background=light
+    hi! Pmenu ctermbg=Red
+endif
 
 au BufEnter,BufNew,Syntax * hi EOLWhitespace guifg=red guibg=red ctermfg=red ctermbg=red
 au BufEnter,BufNew,Syntax * match EOLWhitespace /\s\+$/
@@ -207,7 +213,11 @@ let g:airline#extensions#branch#displayed_head_limit=20
 
 " vim airline theme plugin {{{
 set runtimepath^=~/.vim/bundle/vim-airline-themes/
-let g:airline_theme='base16color'
+if !exists('$ITERM_PROFILE') || $ITERM_PROFILE == 'Dark'
+    let g:airline_theme='base16color'
+else
+    let g:airline_theme='term_light'
+endif
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 " }}}
