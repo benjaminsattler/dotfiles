@@ -24,6 +24,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export HM_APPLICATION_ENV=development
 export EDITOR=vim
+export PAGER=cat
 
 export FZF_COMPLETION_TRIGGER="$"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
