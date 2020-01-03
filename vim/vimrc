@@ -10,6 +10,8 @@ set tabstop=4                             " existing tabs count as 2 spaces
 set expandtab                             " spaces are my preferred indentation method
 set colorcolumn=80                        " display 80 chars text width limit
 set cursorline                            " highlight cursorline
+set shortmess+=I                          " no intro message
+
 augroup Numbertoggle                      " toggle relative line numbers
   autocmd!
   if exists("##TerminalOpen") == "1"
@@ -50,6 +52,8 @@ set ttyfast                               " improve drawing speed
 
 set splitright                            " split to right pane
 set splitbelow                            " split to bottom pane
+
+packadd! matchit                          " improve functionality of %
 
 " color customizations {{{
 if !exists('$ITERM_PROFILE') || $ITERM_PROFILE == 'Dark'
@@ -198,6 +202,10 @@ command! -nargs=+ -complete=file Lgrep lgrep! <args> | execute ":llist"
 nnoremap <leader>cp :let @*=expand('%')<CR>
 " search for all TODOs in the current folder
 nnoremap <leader>td :Grep TODO<CR>
+" <up> and <down> in command mode search for the most recent partial command
+" <c-p> and <c-n> only cycle through history, which is inferior
+cnoremap <c-n> <down>
+cnoremap <c-p> <up>
 " }}}
 
 " vim airline plugin {{{
@@ -342,4 +350,8 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " {{{ vim-surround
 set runtimepath^=~/.vim/bundle/vim-surround
+" }}}
+
+" {{{ vim-startify
+set runtimepath^=~/.vim/bundle/vim-startify
 " }}}
