@@ -340,3 +340,7 @@ nmap <Leader>tg :TestVisit<CR>
 set runtimepath^=~/.vim/bundle/ale
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 " }}}
+
+" {{{ vim-surround
+set runtimepath^=~/.vim/bundle/vim-surround
+" }}}
