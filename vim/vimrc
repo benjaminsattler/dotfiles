@@ -9,7 +9,7 @@ set softtabstop=4                         " as does tab
 set tabstop=4                             " existing tabs count as 2 spaces
 set expandtab                             " spaces are my preferred indentation method
 set colorcolumn=80                        " display 80 chars text width limit
-
+set cursorline                            " highlight cursorline
 augroup Numbertoggle                      " toggle relative line numbers
   autocmd!
   if exists("##TerminalOpen") == "1"
@@ -53,17 +53,7 @@ set splitbelow                            " split to bottom pane
 
 " color customizations {{{
 set background=light                       " light terminal background is default
-" Changes have blue-ish font color
-hi DiffChange term=bold ctermbg=None ctermfg=4 guibg=DarkMagenta
-" Additions have green-ish font color
-hi DiffAdd term=bold ctermbg=None ctermfg=2 guibg=DarkMagenta
-" Deletions have red-ish font color
-hi DiffDelete term=bold ctermbg=None ctermfg=5 guibg=DarkMagenta
-" Fold lines of closed folds are lime-ish
-hi SpellBad term=reverse ctermbg=None ctermfg=9 gui=undercurl guisp=Red
-hi SyntasticWarning term=reverse ctermbg=None ctermfg=14444 gui=undercurl guisp=Red
-hi Search term=reverse ctermbg=black ctermfg=white
-hi clear HtmlItalic
+hi Pmenu ctermbg=Red
 
 au BufEnter,BufNew,Syntax * hi EOLWhitespace guifg=red guibg=red ctermfg=red ctermbg=red
 au BufEnter,BufNew,Syntax * match EOLWhitespace /\s\+$/
@@ -216,12 +206,11 @@ let g:airline#extensions#branch#displayed_head_limit=20
 
 " vim airline theme plugin {{{
 set runtimepath^=~/.vim/bundle/vim-airline-themes/
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='light'
-"let g:airline_solarized_dark_text = 1
+let g:airline_theme='term_light'
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 " }}}
+
 
 " vim gitgutter plugin {{{
 set runtimepath^=~/.vim/bundle/vim-gitgutter/
