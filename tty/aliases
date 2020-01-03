@@ -22,5 +22,3 @@ type vagrant > /dev/null 2>&1 && alias v="vagrant"
 
 type docker > /dev/null 2>&1 && alias d="docker"
 type docker-compose > /dev/null 2>&1 && alias dc="docker-compose"
-
-type nvim > /dev/null 2>&1 && alias vim="nvim"
