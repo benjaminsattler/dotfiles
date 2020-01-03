@@ -9,6 +9,7 @@ set softtabstop=4                         " as does tab
 set tabstop=4                             " existing tabs count as 2 spaces
 set expandtab                             " spaces are my preferred indentation method
 set colorcolumn=80                        " display 80 chars text width limit
+set cursorline                            " highlight cursorline
 
 augroup Numbertoggle                      " toggle relative line numbers
   autocmd!
