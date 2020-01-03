@@ -350,3 +350,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 " {{{ vim-surround
 set runtimepath^=~/.vim/bundle/vim-surround
 " }}}
+
+" {{{ vim-startify
+set runtimepath^=~/.vim/bundle/vim-startify
+" }}}
