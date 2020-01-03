@@ -54,6 +54,7 @@ set splitbelow                            " split to bottom pane
 
 " color customizations {{{
 set background=dark                       " dark terminal background is default
+hi! link Pmenu WildMenu
 
 au BufEnter,BufNew,Syntax * hi EOLWhitespace guifg=red guibg=red ctermfg=red ctermbg=red
 au BufEnter,BufNew,Syntax * match EOLWhitespace /\s\+$/
