@@ -1,3 +1,9 @@
+if !has('nvim') && empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+   \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
     Plug 'majutsushi/tagbar'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -45,13 +51,13 @@ augroup Numbertoggle                      " toggle relative line numbers
   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * call FocusLineNumbers()
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave * call BlurLineNumbers()
 
-  function BlurLineNumbers()
+  function! BlurLineNumbers()
       if &buftype != "terminal"
           setlocal norelativenumber
       endif
   endfunction
 
-  function FocusLineNumbers()
+  function! FocusLineNumbers()
       if &buftype != "terminal"
           setlocal relativenumber
       endif
@@ -271,7 +277,9 @@ let g:localvimrc_sandbox=0
 " }}}
 
 " vim gutentags plugin {{{
-set statusline+=%{gutentags#statusline()}
+if exists('*gutentags#statusline')
+    set statusline+=%{gutentags#statusline()}
+endif
 let g:gutentags_cache_dir='~/.ctagscache/'
 " }}}
 
