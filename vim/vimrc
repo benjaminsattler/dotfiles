@@ -5,7 +5,7 @@ if !has('nvim') && empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-    Plug 'majutsushi/tagbar'
+    Plug 'majutsushi/tagbar', {'on': 'Tagbar'}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
