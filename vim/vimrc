@@ -9,8 +9,13 @@ set softtabstop=4                         " as does tab
 set tabstop=4                             " existing tabs count as 2 spaces
 set expandtab                             " spaces are my preferred indentation method
 set colorcolumn=80                        " display 80 chars text width limit
-set cursorline                            " highlight cursorline
 set shortmess+=I                          " no intro message
+
+augroup CursorLine
+    autocmd!
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave * set nocursorline
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * set cursorline
+augroup END
 
 augroup Numbertoggle                      " toggle relative line numbers
   autocmd!
@@ -18,8 +23,8 @@ augroup Numbertoggle                      " toggle relative line numbers
     autocmd TerminalOpen * setlocal nonumber norelativenumber
   endif
 
-  autocmd BufEnter,FocusGained,InsertLeave * call FocusLineNumbers()
-  autocmd BufLeave,FocusLost,InsertEnter * call BlurLineNumbers()
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * call FocusLineNumbers()
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave * call BlurLineNumbers()
 
   function BlurLineNumbers()
       if &buftype != "terminal"
@@ -33,6 +38,12 @@ augroup Numbertoggle                      " toggle relative line numbers
       endif
   endfunction
 augroup END
+
+augroup ReloadVimRc
+    autocmd!
+    autocmd BufWritePost ~/.vimrc source ~/.vimrc
+augroup END
+
 
 set scrolloff=5                           " always show two more lines at the window border
 set number                                " show absolute line number at cursor position
@@ -134,7 +145,7 @@ inoreabbrev wouldnt wouldn't
 inoreabbrev oclock o'clock
 " }}}
 
-function ToggleWhitespace()
+function! ToggleWhitespace()
     if &syntax == 'whitespace'
         execute 'set syntax=' . b:original_syntax
     else
