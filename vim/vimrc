@@ -6,7 +6,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
     Plug 'majutsushi/tagbar', {'on': 'Tagbar'}
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'tpope/vim-fugitive'
