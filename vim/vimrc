@@ -1,3 +1,22 @@
+call plug#begin('~/.vim/plugged')
+    Plug 'majutsushi/tagbar'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'ludovicchabant/vim-gutentags'
+    Plug 'embear/vim-localvimrc'
+    Plug 'posva/vim-vue', {'for': 'vue'}
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'janko/vim-test'
+    Plug 'dense-analysis/ale'
+    Plug 'tpope/vim-surround'
+    Plug 'mhinz/vim-startify'
+call plug#end()
+
 syntax on                                 " enable syntax highlighting
 filetype plugin indent on                 " enable filetype and indentation plugins
 set nocompatible                          " we certainly don't care anymore about being compatible
@@ -220,7 +239,6 @@ cnoremap <c-p> <up>
 " }}}
 
 " vim airline plugin {{{
-set runtimepath^=~/.vim/bundle/vim-airline/
 set noshowmode
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -230,7 +248,6 @@ let g:airline#extensions#branch#displayed_head_limit=20
 " }}}
 
 " vim airline theme plugin {{{
-set runtimepath^=~/.vim/bundle/vim-airline-themes/
 if !exists('$ITERM_PROFILE') || $ITERM_PROFILE == 'Dark'
     let g:airline_theme='base16color'
 else
@@ -241,7 +258,6 @@ let g:airline_skip_empty_sections = 1
 " }}}
 
 " vim gitgutter plugin {{{
-set runtimepath^=~/.vim/bundle/vim-gitgutter/
 let g:gitgutter_map_keys = 0
 nnoremap <leader>gp :GitGutterPreviewHunk<CR>
 nnoremap <leader>gu :GitGutterUndoHunk<CR>
@@ -250,33 +266,27 @@ nnoremap [h :GitGutterPrevHunk<CR>
 " }}}
 
 " vim localvimrc plugin {{{
-set runtimepath^=~/.vim/bundle/vim-localvimrc/
 let g:localvimrc_whitelist=['/Users/bsa/src/.*', '/home/bsa/src/.*']
 let g:localvimrc_sandbox=0
 " }}}
 
 " vim gutentags plugin {{{
-set runtimepath^=~/.vim/bundle/vim-gutentags/
 set statusline+=%{gutentags#statusline()}
 let g:gutentags_cache_dir='~/.ctagscache/'
 " }}}
 
 " tagbar plugin {{{
-set runtimepath^=~/.vim/bundle/tagbar/
 nnoremap <Leader>tt :Tagbar<CR>
 let g:tagbar_autofocus = 1
 " }}}
 
 " pug syntax plugin {{{
-set runtimepath^=~/.vim/bundle/vim-pug/
 " }}}
 
 " vim fugitive plugin {{{
-set runtimepath^=~/.vim/bundle/vim-fugitive/
 " }}}
 
 " vim coc plugin {{{
-set runtimepath^=~/.vim/bundle/coc.nvim/
 nmap gd <Plug>(coc-definition)
 nmap gy <Plug>(coc-type-definition)
 nmap gi <Plug>(coc-implementation)
@@ -294,11 +304,9 @@ endfunction
 " }}}
 
 " FZF plugin {{{
-set runtimepath^=/usr/local/opt/fzf/
 " }}}
 
 " fzf.vim plugin {{{
-set runtimepath^=~/.vim/bundle/fzf.vim/
 let $FZF_DEFAULT_OPTS = '--border --bind=ctrl-n:page-down,ctrl-p:page-up'
 nnoremap <Leader>zf :Files<CR>
 nnoremap <Leader>zt :Tags<CR>
@@ -340,12 +348,10 @@ let g:fzf_layout = { 'window': 'call OpenFloatingWin()' }
 " }}}
 
 " {{{ editorconfig files
-set runtimepath^=~/.vim/bundle/editorconfig-vim/
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " }}}
 
 " {{{ vim-test plugin
-set runtimepath^=~/.vim/bundle/vim-test
 nmap <Leader>tn :TestNearest<CR>
 nmap <Leader>tf :TestFile<CR>
 nmap <Leader>ts :TestSuite<CR>
@@ -354,14 +360,11 @@ nmap <Leader>tg :TestVisit<CR>
 " }}}
 
 " {{{ ale
-set runtimepath^=~/.vim/bundle/ale
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 " }}}
 
 " {{{ vim-surround
-set runtimepath^=~/.vim/bundle/vim-surround
 " }}}
 
 " {{{ vim-startify
-set runtimepath^=~/.vim/bundle/vim-startify
 " }}}
