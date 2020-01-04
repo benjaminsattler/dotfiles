@@ -299,6 +299,8 @@ nmap gd <Plug>(coc-definition)
 nmap gy <Plug>(coc-type-definition)
 nmap gi <Plug>(coc-implementation)
 nmap gr <Plug>(coc-references)
+nmap gf <Plug>(coc-refactor)
+nmap gn <Plug>(coc-rename)
 imap <expr> <c-space> coc#refresh()
 nmap <leader>cd :call <SID>show_documentation()<CR>
 
