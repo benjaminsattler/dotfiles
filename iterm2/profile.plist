@@ -271,11 +271,11 @@
             "Green Component" : 0.17172816395759583
           },
           "Background Color" : {
-            "Red Component" : 0.97037827968597412,
+            "Red Component" : 0.992156862745098,
             "Color Space" : "Calibrated",
-            "Blue Component" : 0.97036570310592651,
+            "Blue Component" : 0.803921568627451,
             "Alpha Component" : 1,
-            "Green Component" : 0.97034925222396851
+            "Green Component" : 1
           },
           "Ansi 11 Color" : {
             "Red Component" : 0.72045379877090454,
