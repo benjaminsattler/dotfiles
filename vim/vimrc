@@ -39,8 +39,8 @@ set shortmess+=I                          " no intro message
 augroup ColorColumn
   set colorcolumn=0
   autocmd!
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave * set colorcolumn=0
-  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &buftype == "" |set colorcolumn=80
+  autocmd BufLeave,FocusLost,WinLeave * set colorcolumn=0
+  autocmd BufEnter,FocusGained,WinEnter * if &buftype == "" |set colorcolumn=80
   autocmd BufWinEnter quickfix set colorcolumn=0
   augroup END
 
@@ -77,6 +77,12 @@ augroup ReloadVimRc
     autocmd BufWritePost ~/.vimrc source ~/.vimrc
 augroup END
 
+augroup OpenFile
+    autocmd!
+    " Go to last known position and center that on screen
+    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+        \| exe "normal! g'\"zz" | endif
+augroup END
 
 set scrolloff=5                           " always show two more lines at the window border
 set number                                " show absolute line number at cursor position
