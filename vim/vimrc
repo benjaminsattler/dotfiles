@@ -34,6 +34,7 @@ set softtabstop=4                         " as does tab
 set tabstop=4                             " existing tabs count as 2 spaces
 set expandtab                             " spaces are my preferred indentation method
 set shortmess+=I                          " no intro message
+set updatetime=500                        " used for the CursorHold autocommand
 
 " display 80 chars text width limit in normal editor windows
 augroup ColorColumn
@@ -318,6 +319,8 @@ nmap gn <Plug>(coc-rename)
 imap <expr> <c-space> coc#refresh()
 nmap <leader>cd :call <SID>show_documentation()<CR>
 
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -325,6 +328,17 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+let g:coc_global_extensions = [
+            \'coc-css',
+            \'coc-highlight',
+            \'coc-html',
+            \'coc-json',
+            \'coc-phpls',
+            \'coc-sh',
+            \'coc-solargraph',
+            \'coc-tsserver',
+            \'coc-vetur'
+            \]
 " }}}
 
 " FZF plugin {{{
