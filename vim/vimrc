@@ -33,13 +33,21 @@ set shiftwidth=4                          " vim shifts by 2 spaces
 set softtabstop=4                         " as does tab
 set tabstop=4                             " existing tabs count as 2 spaces
 set expandtab                             " spaces are my preferred indentation method
-set colorcolumn=80                        " display 80 chars text width limit
 set shortmess+=I                          " no intro message
 
+" display 80 chars text width limit in normal editor windows
+augroup ColorColumn
+  set colorcolumn=0
+  autocmd!
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave * set colorcolumn=0
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &buftype == "" |set colorcolumn=80
+  autocmd BufWinEnter quickfix set colorcolumn=0
+  augroup END
+
 augroup CursorLine
-    autocmd!
-    autocmd BufLeave,FocusLost,InsertEnter,WinLeave * set nocursorline
-    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * set cursorline
+  autocmd!
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave * set nocursorline
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * set cursorline
 augroup END
 
 augroup Numbertoggle                      " toggle relative line numbers
