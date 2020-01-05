@@ -219,7 +219,7 @@ nnoremap Q <nop>
 " remap W to w
 command! W w
 " make Y behave as D, C, etc
-cnoremap Y y$
+nnoremap Y y$
 " disable search highlighting
 nnoremap <leader>ch :nohlsearch<CR>
 " shortcut to edit vimrc
