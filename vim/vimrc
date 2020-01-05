@@ -34,13 +34,14 @@ set softtabstop=4                         " as does tab
 set tabstop=4                             " existing tabs count as 2 spaces
 set expandtab                             " spaces are my preferred indentation method
 set shortmess+=I                          " no intro message
+set updatetime=500                        " used for the CursorHold autocommand
 
 " display 80 chars text width limit in normal editor windows
 augroup ColorColumn
   set colorcolumn=0
   autocmd!
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave * set colorcolumn=0
-  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &buftype == "" |set colorcolumn=80
+  autocmd BufLeave,FocusLost,WinLeave * set colorcolumn=0
+  autocmd BufEnter,FocusGained,WinEnter * if &buftype == "" |set colorcolumn=80
   autocmd BufWinEnter quickfix set colorcolumn=0
   augroup END
 
@@ -77,6 +78,12 @@ augroup ReloadVimRc
     autocmd BufWritePost ~/.vimrc source ~/.vimrc
 augroup END
 
+augroup OpenFile
+    autocmd!
+    " Go to last known position and center that on screen
+    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+        \| exe "normal! g'\"zz" | endif
+augroup END
 
 set scrolloff=5                           " always show two more lines at the window border
 set number                                " show absolute line number at cursor position
@@ -313,6 +320,8 @@ nmap gn <Plug>(coc-rename)
 imap <expr> <c-space> coc#refresh()
 nmap <leader>cd :call <SID>show_documentation()<CR>
 
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -320,6 +329,17 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+let g:coc_global_extensions = [
+            \'coc-css',
+            \'coc-highlight',
+            \'coc-html',
+            \'coc-json',
+            \'coc-phpls',
+            \'coc-sh',
+            \'coc-solargraph',
+            \'coc-tsserver',
+            \'coc-vetur'
+            \]
 " }}}
 
 " FZF plugin {{{
