@@ -114,6 +114,7 @@ if !exists('$ITERM_PROFILE') || $ITERM_PROFILE == 'Dark'
 else
     set background=light
     hi! Pmenu ctermbg=Red
+    hi! CursorColumn ctermbg=lightyellow guibg=lightyellow cterm=bold
 endif
 
 au BufEnter,BufNew,Syntax * hi EOLWhitespace guifg=red guibg=red ctermfg=red ctermbg=red
