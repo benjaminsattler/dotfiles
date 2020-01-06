@@ -311,14 +311,14 @@ let g:tagbar_autofocus = 1
 " }}}
 
 " vim coc plugin {{{
-nmap gd <Plug>(coc-definition)
-nmap gy <Plug>(coc-type-definition)
-nmap gi <Plug>(coc-implementation)
-nmap gr <Plug>(coc-references)
-nmap gf <Plug>(coc-refactor)
-nmap gn <Plug>(coc-rename)
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gr <Plug>(coc-references)
+nmap <leader>gf <Plug>(coc-refactor)
+nmap <leader>gn <Plug>(coc-rename)
 imap <expr> <c-space> coc#refresh()
-nmap <leader>cd :call <SID>show_documentation()<CR>
+nmap <leader>gd :call <SID>show_documentation()<CR>
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
