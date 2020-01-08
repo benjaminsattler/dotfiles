@@ -2,26 +2,8 @@ type ranger > /dev/null 2>&1 && alias r="ranger"
 type kubectl > /dev/null 2>&1 && alias pods="watch kubectl get pods"
 type kubectl > /dev/null 2>&1 && alias k="kubectl"
 alias bb="curl -fsSL http://setup.benjaminsattler.net | /bin/sh"
-
-function ls {
-    default_args="-A"
-    if [ "${ITERM_PROFILE}" = "Dark" ]; then
-      \colorls ${=default_args} --dark "$@"
-    elif  [ "${ITERM_PROFILE}" = "Light" ]; then
-      \colorls ${=default_args} --light "$@"
-    fi
-}
-
-function ll {
-    default_args='-Al --gs'
-    if [ "${ITERM_PROFILE}" = "Dark" ]; then
-       \colorls ${=default_args} --dark "$@"
-    elif  [ "${ITERM_PROFILE}" = "Light" ]; then
-       \colorls ${=default_args} --light "$@"
-    fi
-}
-alias ls > /dev/null 2>&1 && unalias ls
-alias ll > /dev/null 2>&1 && unalias ll
+type exa > /dev/null 2>&1 && alias ls="exa"
+type exa > /dev/null 2>&1 && alias ll="exa -l -F -h --group -H -i --git"
 type bat > /dev/null 2>&1 && alias cat="bat"
 type gdate > /dev/null 2>&1 && alias date="gdate"
 type git > /dev/null 2>&1 && alias g="git"
