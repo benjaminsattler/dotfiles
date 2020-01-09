@@ -75,7 +75,7 @@ augroup END
 
 augroup ReloadVimRc
     autocmd!
-    autocmd BufWritePost ~/.vimrc source ~/.vimrc
+    autocmd BufWritePost ~/.vimrc source ~/.vimrc | execute "normal zx"
 augroup END
 
 augroup OpenFile
@@ -223,6 +223,9 @@ nnoremap <C-l> <C-w>l
 " handy quickfix window commands
 nnoremap q] :cnext<CR>
 nnoremap q[ :cprevious<CR>
+" handy buffer navigation commands
+nnoremap b] :bnext<CR>
+nnoremap b[ :bprevious<CR>
 " disable obnoxious ex mode
 nnoremap Q <nop>
 " remap W to w
@@ -247,10 +250,12 @@ inoremap < <><Left>
 inoremap " ""<Left>
 inoremap ' ''<Left>
 inoremap ` ``<Left>
+" handy search shortcut (there is a space at the end and that is intentional)
+nnoremap <leader>f :Grep 
 " grep should not jump to the first result and open quickfix list
-command! -nargs=+ -complete=file Grep grep! <args> | execute ":clist"
+command! -nargs=+ -complete=file Grep grep! <args>
 " lgrep should not jump to the first result and open location list
-command! -nargs=+ -complete=file Lgrep lgrep! <args> | execute ":llist"
+command! -nargs=+ -complete=file Lgrep lgrep! <args>
 " copy the current file path to the clipboard
 nnoremap <leader>cp :let @*=expand('%')<CR>
 " search for all TODOs in the current folder
