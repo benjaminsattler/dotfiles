@@ -82,7 +82,7 @@ augroup OpenFile
     autocmd!
     " Go to last known position and center that on screen
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-        \| exe "normal! g'\"zz" | endif
+        \| execute "normal! g'\"zxzz" | endif
 augroup END
 
 set scrolloff=5                           " always show two more lines at the window border
@@ -115,6 +115,7 @@ else
     set background=light
     hi! Pmenu ctermbg=Red
     hi! CursorColumn ctermbg=lightyellow guibg=lightyellow cterm=bold
+    hi! Visual ctermbg=0 guibg=LightGrey
 endif
 
 au BufEnter,BufNew,Syntax * hi EOLWhitespace guifg=red guibg=red ctermfg=red ctermbg=red
@@ -140,7 +141,7 @@ set foldlevel=0                           " auto-fold from first level on
 
 if executable('ag')
   " Use Ag over Grep
-  set grepprg=ag\ --vimgrep\ --ignore=var/\ --ignore=vendor/\ --ignore=var/
+  set grepprg=ag\ --vimgrep\ --ignore=var/\ --ignore=vendor/\ --ignore=node_modules/
 endif
 
 augroup Vue
