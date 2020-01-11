@@ -109,16 +109,16 @@ packadd! matchit                          " improve functionality of %
 " color customizations {{{
 if !exists('$ITERM_PROFILE') || $ITERM_PROFILE == 'Dark'
     set background=dark                   " dark terminal background is default
-    hi! link Pmenu WildMenu
-    hi! link PmenuSel Normal
+    highlight! link Pmenu WildMenu
+    highlight! link PmenuSel Normal
 else
     set background=light
-    hi! Pmenu ctermbg=Red
-    hi! CursorColumn ctermbg=lightyellow guibg=lightyellow cterm=bold
-    hi! Visual ctermbg=0 guibg=LightGrey
+    highlight! Pmenu ctermbg=Red
+    highlight! CursorColumn ctermbg=lightyellow guibg=lightyellow cterm=bold
+    highlight! Visual ctermbg=0 guibg=LightGrey
 endif
 
-au BufEnter,BufNew,Syntax * hi EOLWhitespace guifg=red guibg=red ctermfg=red ctermbg=red
+au BufEnter,BufNew,Syntax * highlight EOLWhitespace guifg=red guibg=red ctermfg=red ctermbg=red
 au BufEnter,BufNew,Syntax * match EOLWhitespace /\s\+$/
 " }}}
 
