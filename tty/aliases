@@ -15,6 +15,18 @@ type git > /dev/null 2>&1 && alias ga="git add"
 type git > /dev/null 2>&1 && alias gpl="git pull"
 type git > /dev/null 2>&1 && alias gps="git push origin"
 
+function scim {
+    type scim > /dev/null 2>&1 || return;
+    if [ "$ITERM_PROFILE" = "Light" ]; then
+        \rm -f ~/.scimrc && ln -s ~/src/dotfiles/scim/scimrc.light ~/.scimrc
+    fi
+
+    if [ "$ITERM_PROFILE" = "Dark" ]; then
+        \rm -f ~/.scimrc && ln -s ~/src/dotfiles/scim/scimrc.dark ~/.scimrc
+    fi
+    /usr/bin/env -S "scim $@"
+}
+
 type trash > /dev/null 2>&1 && alias rm="trash"
 
 type vagrant > /dev/null 2>&1 && alias v="vagrant"
