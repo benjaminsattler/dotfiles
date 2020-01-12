@@ -264,6 +264,9 @@ nnoremap <leader>td :Grep TODO<CR>
 " <c-p> and <c-n> only cycle through history, which is inferior
 cnoremap <c-n> <down>
 cnoremap <c-p> <up>
+" dont jump to the next/previous search result automatically
+nnoremap * :let @/=expand("<cword>")<CR> <bar> :set hlsearch<CR>
+nnoremap # *
 " }}}
 
 " vim airline plugin {{{
@@ -407,6 +410,7 @@ nmap <Leader>tg :TestVisit<CR>
 
 " {{{ ale
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_virtualtext_cursor = 1
 " }}}
 
 " {{{ vim-surround
