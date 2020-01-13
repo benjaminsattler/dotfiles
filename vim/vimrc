@@ -111,11 +111,16 @@ if !exists('$ITERM_PROFILE') || $ITERM_PROFILE == 'Dark'
     set background=dark                   " dark terminal background is default
     highlight! link Pmenu WildMenu
     highlight! link PmenuSel Normal
+    highlight! ALEError ctermbg=8 ctermfg=15
+    highlight! link ALEWarning ALEError
+    highlight! WildMenu ctermbg=6
 else
     set background=light
-    highlight! Pmenu ctermbg=Red
-    highlight! CursorColumn ctermbg=lightyellow guibg=lightyellow cterm=bold
-    highlight! Visual ctermbg=0 guibg=LightGrey
+    highlight! Pmenu ctermbg=7
+    highlight! CursorColumn ctermbg=15 guibg=15 cterm=None
+    highlight! Visual ctermbg=0 guibg=15
+    highlight! ALEError ctermbg=None ctermfg=7
+    highlight! link ALEWarning ALEError
 endif
 
 au BufEnter,BufNew,Syntax * highlight EOLWhitespace guifg=red guibg=red ctermfg=red ctermbg=red
