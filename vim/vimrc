@@ -111,11 +111,16 @@ if !exists('$ITERM_PROFILE') || $ITERM_PROFILE == 'Dark'
     set background=dark                   " dark terminal background is default
     highlight! link Pmenu WildMenu
     highlight! link PmenuSel Normal
+    highlight! ALEError ctermbg=8 ctermfg=15
+    highlight! link ALEWarning ALEError
+    highlight! WildMenu ctermbg=6
 else
     set background=light
-    highlight! Pmenu ctermbg=Red
-    highlight! CursorColumn ctermbg=lightyellow guibg=lightyellow cterm=bold
-    highlight! Visual ctermbg=0 guibg=LightGrey
+    highlight! Pmenu ctermbg=7
+    highlight! CursorColumn ctermbg=15 guibg=15 cterm=None
+    highlight! Visual ctermbg=0 guibg=15
+    highlight! ALEError ctermbg=None ctermfg=7
+    highlight! link ALEWarning ALEError
 endif
 
 au BufEnter,BufNew,Syntax * highlight EOLWhitespace guifg=red guibg=red ctermfg=red ctermbg=red
@@ -223,9 +228,6 @@ nnoremap <C-l> <C-w>l
 " handy quickfix window commands
 nnoremap q] :cnext<CR>
 nnoremap q[ :cprevious<CR>
-" handy buffer navigation commands
-nnoremap b] :bnext<CR>
-nnoremap b[ :bprevious<CR>
 " disable obnoxious ex mode
 nnoremap Q <nop>
 " remap W to w
@@ -328,9 +330,8 @@ nmap <leader>gr <Plug>(coc-references)
 nmap <leader>gf <Plug>(coc-refactor)
 nmap <leader>gn <Plug>(coc-rename)
 imap <expr> <c-space> coc#refresh()
-nmap <leader>gd :call <SID>show_documentation()<CR>
+nmap <leader>gs :call <SID>show_documentation()<CR>
 
-autocmd CursorHold * silent call CocActionAsync('highlight')
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -339,6 +340,13 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+augroup cocfunction
+    autocmd!
+    autocmd CursorHold * silent call CocAction('doHover')
+    autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup END
+
 let g:coc_global_extensions = [
             \'coc-css',
             \'coc-highlight',
@@ -411,6 +419,7 @@ nmap <Leader>tg :TestVisit<CR>
 " {{{ ale
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_virtualtext_cursor = 1
+let g:ale_virtualtext_prefix = 'Error: '
 " }}}
 
 " {{{ vim-surround
