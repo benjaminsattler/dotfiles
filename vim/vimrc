@@ -228,9 +228,6 @@ nnoremap <C-l> <C-w>l
 " handy quickfix window commands
 nnoremap q] :cnext<CR>
 nnoremap q[ :cprevious<CR>
-" handy buffer navigation commands
-nnoremap b] :bnext<CR>
-nnoremap b[ :bprevious<CR>
 " disable obnoxious ex mode
 nnoremap Q <nop>
 " remap W to w
@@ -332,9 +329,8 @@ nmap <leader>gr <Plug>(coc-references)
 nmap <leader>gf <Plug>(coc-refactor)
 nmap <leader>gn <Plug>(coc-rename)
 imap <expr> <c-space> coc#refresh()
-nmap <leader>gd :call <SID>show_documentation()<CR>
+nmap <leader>gs :call <SID>show_documentation()<CR>
 
-autocmd CursorHold * silent call CocActionAsync('highlight')
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
