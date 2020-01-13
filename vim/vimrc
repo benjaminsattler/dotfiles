@@ -339,6 +339,13 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+augroup cocfunction
+    autocmd!
+    autocmd CursorHold * silent call CocAction('doHover')
+    autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup END
+
 let g:coc_global_extensions = [
             \'coc-css',
             \'coc-highlight',
@@ -411,6 +418,7 @@ nmap <Leader>tg :TestVisit<CR>
 " {{{ ale
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_virtualtext_cursor = 1
+let g:ale_virtualtext_prefix = 'Error: '
 " }}}
 
 " {{{ vim-surround
