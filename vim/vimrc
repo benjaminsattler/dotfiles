@@ -356,7 +356,7 @@ let g:coc_global_extensions = [
 " fzf.vim plugin {{{
 let $FZF_DEFAULT_OPTS = '--border --bind=ctrl-n:page-down,ctrl-p:page-up'
 nnoremap <Leader>zf :Files<CR>
-nnoremap <Leader>zt :Tags<CR>
+nnoremap <Leader>zt :BTags<CR>
 nnoremap <Leader>zb :Buffers<CR>
 nnoremap <Leader>zc :BCommits<CR>
 nnoremap <Leader>zh :History<CR>
