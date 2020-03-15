@@ -36,6 +36,7 @@ fi
       # os_icon               # os identifier
       dir                     # current directory
       vcs                     # git status
+      kubecontext             # kubernetes context
       # prompt_char           # prompt symbol
   )
 
