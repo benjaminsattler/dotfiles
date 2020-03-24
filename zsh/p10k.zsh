@@ -37,7 +37,8 @@ fi
       dir                     # current directory
       vcs                     # git status
       kubecontext             # kubernetes context
-      # prompt_char           # prompt symbol
+      newline
+      prompt_char           # prompt symbol
   )
 
   # The list of segments shown on the right. Fill it with less important segments.
