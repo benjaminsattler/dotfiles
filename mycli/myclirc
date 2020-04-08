@@ -131,3 +131,4 @@ percona04 = mysql://development:development@percona-a04.c.dev-shop-real.internal
 percona05 = mysql://development:development@percona-a05.c.dev-shop-real.internal/hm_live
 percona09 = mysql://development:development@percona-a09.c.dev-shop-real.internal/hm_live
 percona09b = mysql://development:development@percona-b09.c.dev-shop-real.internal/
+percona11 = mysql://development:development@percona-a11.c.dev-shop-real.internal/hm_live
