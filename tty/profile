@@ -2,6 +2,7 @@
 export HM_APPLICATION_ENV=development
 export EDITOR=vim
 export PAGER=bat
+export MANPAGER="col -bx | bat -p -lman"
 
 export LANG=en_US.UTF-8
 export FZF_COMPLETION_TRIGGER="$"
