@@ -149,6 +149,13 @@
             "Alpha Component" : 1,
             "Green Component" : 0.12867720425128937
           },
+          "Bold Color" : {
+            "Red Component" : 0.866666666666667,
+            "Color Space" : "Calibrated",
+            "Blue Component" : 0.537254901960784,
+            "Alpha Component" : 1,
+            "Green Component" : 0.866666666666667
+          },
           "Badge Color" : {
             "Red Component" : 1,
             "Color Space" : "Calibrated",
