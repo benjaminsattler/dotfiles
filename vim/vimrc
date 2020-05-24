@@ -21,6 +21,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'dense-analysis/ale'
     Plug 'tpope/vim-surround'
     Plug 'mhinz/vim-startify'
+    Plug 'honza/vim-snippets'
 call plug#end()
 
 syntax on                                 " enable syntax highlighting
@@ -330,6 +331,32 @@ nmap <leader>gf <Plug>(coc-refactor)
 nmap <leader>gn <Plug>(coc-rename)
 imap <expr> <c-space> coc#refresh()
 nmap <leader>gs :call CocActionAsync('doHover')<CR>
+nmap <leader>gh <Plug>(coc-float-hide)
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+nnoremap <expr><C-f> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-f>"
+nnoremap <expr><C-b> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-b>"
+snoremap jk <ESC>
+
+inoremap <silent><expr> <TAB>
+            \ pumvisible() ? coc#_select_confirm() :
+            \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_prev = '<s-tab>'
 
 augroup cocfunction
     autocmd!
@@ -346,7 +373,8 @@ let g:coc_global_extensions = [
             \'coc-sh',
             \'coc-solargraph',
             \'coc-tsserver',
-            \'coc-vetur'
+            \'coc-vetur',
+            \'coc-snippets'
             \]
 " }}}
 
