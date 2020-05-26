@@ -29,7 +29,13 @@ scrolling:
 
 font:
   normal:
-    family: "SFMono Nerd Font Mono"
+    family: "SFMono Nerd Font"
+  bold:
+    family: "SFMono Nerd Font Bold"
+  italic:
+    family: "SFMono Nerd Font Italic"
+  bold_italic:
+    family: "SFMono Nerd Font Bold Italic"
   size: 14.0
 
 draw_bold_text_with_bright_colors: true
