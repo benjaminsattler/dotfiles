@@ -5,7 +5,6 @@ if !has('nvim') && empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-    Plug 'majutsushi/tagbar', {'on': 'Tagbar'}
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -22,6 +21,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-surround'
     Plug 'mhinz/vim-startify'
     Plug 'honza/vim-snippets'
+    Plug 'liuchengxu/vista.vim'
+
 call plug#end()
 
 syntax on                                 " enable syntax highlighting
@@ -274,7 +275,6 @@ nnoremap # *
 
 " vim airline plugin {{{
 set noshowmode
-let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#gutentags#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -309,11 +309,6 @@ if exists('*gutentags#statusline')
     set statusline+=%{gutentags#statusline()}
 endif
 let g:gutentags_cache_dir='~/.ctagscache/'
-" }}}
-
-" tagbar plugin {{{
-nnoremap <Leader>tt :Tagbar<CR>
-let g:tagbar_autofocus = 1
 " }}}
 
 " pug syntax plugin {{{
@@ -446,4 +441,13 @@ let g:ale_virtualtext_prefix = 'Error: '
 " {{{ vim-startify
 let g:startify_change_to_dir = 0
 let g:startify_change_to_vcs_root = 1
+" }}}
+
+" Vista {{{
+nnoremap <leader>zt :Vista finder<CR>
+nnoremap <leader>tt :Vista!!<CR>
+let g:vista_default_executive = 'coc'
+let g:vista_fzf_preview = ['right:50%']
+let g:vista#renderer#enable_icon = 1
+
 " }}}
