@@ -230,6 +230,10 @@ nnoremap <C-l> <C-w>l
 " handy quickfix window commands
 nnoremap q] :cnext<CR>
 nnoremap q[ :cprevious<CR>
+nnoremap b] :bnext<CR>
+nnoremap b[ :bprevious<CR>
+nnoremap t] gt<CR>
+nnoremap t[ gT<CR>
 " disable obnoxious ex mode
 nnoremap Q <nop>
 " remap W to w
@@ -386,25 +390,25 @@ nnoremap <Leader>zh :History<CR>
 nnoremap <Leader>zs :GFiles?<CR>
 
 function! OpenFloatingWin()
-  let height = &lines - 3
+  let height = &lines - 10
   let width = float2nr(&columns - (&columns * 2 / 10))
-  let col = float2nr((&columns - width) / 2)
+  let col = float2nr((&columns - width) / 3)
 
   "Set the position, size, etc. of the floating window.
   "The size configuration here may not be so flexible, and there's room for further improvement.
   let opts = {
         \ 'relative': 'editor',
-        \ 'row': height * 0.3,
-        \ 'col': col + 15,
-        \ 'width': width * 2 / 3,
-        \ 'height': height / 2
+        \ 'row': height * 0.2,
+        \ 'col': col + 5,
+        \ 'width': width * 3 / 3,
+        \ 'height': height / 1
         \ }
 
   let buf = nvim_create_buf(v:false, v:true)
   let win = nvim_open_win(buf, v:true, opts)
 
   "Set Floating Window Highlighting
-  call setwinvar(win, '&winhl', 'Normal:Pmenu')
+  call setwinvar(win, '&winhl', 'Normal:Normal')
 
   setlocal
         \ buftype=nofile
