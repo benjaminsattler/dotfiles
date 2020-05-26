@@ -247,7 +247,7 @@ nnoremap <leader>ve :tabnew ~/.vimrc<CR>
 " shortcut to reload vimrc
 nnoremap <leader>vr :source ~/.vimrc<CR>
 " open file navigator on the leftmost side
-nnoremap <leader>rr :20Vex<CR>
+nnoremap <leader>rr :CocCommand explorer --toggle<CR>
 " toggle whitespace display
 nnoremap <leader><space> :call ToggleWhitespace()<CR>
 " auto insert closing parenthesis and quotes
@@ -373,7 +373,8 @@ let g:coc_global_extensions = [
             \'coc-solargraph',
             \'coc-tsserver',
             \'coc-vetur',
-            \'coc-snippets'
+            \'coc-snippets',
+            \'coc-explorer',
             \]
 " }}}
 

@@ -33,5 +33,6 @@
     },
     "codelens.enable": true,
     "coc.preferences.colorSupport": true,
-    "highlight.colors.enable": true
+    "highlight.colors.enable": true,
+    "explorer.icon.enableNerdfont":true
 }
