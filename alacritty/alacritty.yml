@@ -1,6 +1,5 @@
 env:
     ITERM_PROFILE: Dark
-    TERM: screen-256color
 window:
   dimensions:
     columns: 80
