@@ -230,8 +230,8 @@ nnoremap <C-l> <C-w>l
 " handy quickfix window commands
 nnoremap q] :cnext<CR>
 nnoremap q[ :cprevious<CR>
-nnoremap b] :bnext<CR>
-nnoremap b[ :bprevious<CR>
+nnoremap g] :bnext<CR>
+nnoremap g[ :bprevious<CR>
 nnoremap t] gt<CR>
 nnoremap t[ gT<CR>
 " disable obnoxious ex mode
