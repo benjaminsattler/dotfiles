@@ -37,6 +37,7 @@ set tabstop=4                             " existing tabs count as 2 spaces
 set expandtab                             " spaces are my preferred indentation method
 set shortmess+=I                          " no intro message
 set updatetime=500                        " used for the CursorHold autocommand
+set iskeyword+=-                          " consider dash part of a word
 
 " display 80 chars text width limit in normal editor windows
 augroup ColorColumn
@@ -230,8 +231,8 @@ nnoremap <C-l> <C-w>l
 " handy quickfix window commands
 nnoremap q] :cnext<CR>
 nnoremap q[ :cprevious<CR>
-nnoremap g] :bnext<CR>
-nnoremap g[ :bprevious<CR>
+nnoremap <TAB> :bnext<CR>
+nnoremap <S-TAB> :bprevious<CR>
 nnoremap t] gt<CR>
 nnoremap t[ gT<CR>
 " disable obnoxious ex mode
