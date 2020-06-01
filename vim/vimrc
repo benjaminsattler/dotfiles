@@ -38,6 +38,7 @@ set expandtab                             " spaces are my preferred indentation 
 set shortmess+=I                          " no intro message
 set updatetime=500                        " used for the CursorHold autocommand
 set iskeyword+=-                          " consider dash part of a word
+set autoread                              " read changes to open files from outside
 
 " display 80 chars text width limit in normal editor windows
 augroup ColorColumn
@@ -84,7 +85,7 @@ augroup END
 augroup OpenFile
     autocmd!
     " Go to last known position and center that on screen
-    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") && &ft != "gitcommit"
         \| execute "normal! g'\"zxzz" | endif
 augroup END
 
@@ -147,10 +148,17 @@ set foldenable                            " enable folding generally
 set foldmethod=marker                     " auto-fold by markers
 set foldlevel=0                           " auto-fold from first level on
 
+set conceallevel=2                        " conceal characters
+
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --vimgrep\ --ignore=var/\ --ignore=vendor/\ --ignore=node_modules/
 endif
+
+augroup AutoWrite
+    autocmd!
+    autocmd FocusLost * nested silent! wall
+augroup END
 
 augroup Vue
   autocmd!
