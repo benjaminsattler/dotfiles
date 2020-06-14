@@ -18,6 +18,9 @@ export GOOS=darwin
 export GOPATH=$HOME/go/bin
 export PATH=$GOPATH:$PATH
 
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-13.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH
 
@@ -27,12 +30,11 @@ export PATH=/usr/local/opt/git/bin/:$PATH
 export PATH=/usr/local/opt/ruby/bin/:$PATH
 export PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 
 export N_PREFIX=~/.n
 export PATH=$N_PREFIX/bin:$PATH
 
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
