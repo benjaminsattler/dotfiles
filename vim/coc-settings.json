@@ -1,7 +1,7 @@
 {
-    "diagnostic.enable": false,
+    "diagnostic.displayByAle": true,
     "suggest.noselect": true,
-    "suggest.numberSelect": true,
+    "suggest.numberSelect": false,
     "suggest.acceptSuggestionOnCommitCharacter":true,
     "suggest.enablePreview": true,
     "suggest.completionItemKindLabels": {
