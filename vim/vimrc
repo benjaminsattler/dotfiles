@@ -123,7 +123,7 @@ else
     highlight! Pmenu ctermbg=7
     highlight! CursorColumn ctermbg=15 guibg=15 cterm=None
     highlight! Visual ctermbg=0 guibg=15
-    highlight! ALEError ctermbg=None ctermfg=7
+    highlight! ALEError ctermbg=None ctermfg=None cterm=undercurl guisp=red
     highlight! link ALEWarning ALEError
 endif
 
