@@ -5,6 +5,8 @@ if !has('nvim') && empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+    Plug 'https://github.com/ryanoasis/vim-devicons'
+    Plug 'https://github.com/adelarsq/vim-devicons-emoji'
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
