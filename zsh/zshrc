@@ -73,6 +73,7 @@ plugins=(
   rake
   tmux
   web-search
+  vi-mode
   yarn
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -110,5 +111,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source $HOME/.profile
+VIM_MODE_INITIAL_KEYMAP=last
+VIM_MODE_VICMD_KEY='jk'
+source "$HOME/src/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
 
+source $HOME/.profile
