@@ -469,3 +469,9 @@ let g:vista_fzf_preview = ['right:50%']
 let g:vista#renderer#enable_icon = 1
 
 " }}}
+
+" {{{ vim-emoji-icon-theme
+function! StartifyEntryFormat()
+    return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
+endfunction
+" }}}
