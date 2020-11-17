@@ -350,8 +350,6 @@ xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
-nnoremap <expr><M-f> coc#util#has_float() ? coc#util#float_scroll(1) : "\<M-f>"
-nnoremap <expr><M-b> coc#util#has_float() ? coc#util#float_scroll(0) : "\<M-b>"
 snoremap jk <ESC>
 
 inoremap <silent><expr> <TAB>
