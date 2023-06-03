@@ -14,6 +14,7 @@ type git > /dev/null 2>&1 && alias gdc="git diff --cached"
 type git > /dev/null 2>&1 && alias ga="git add"
 type git > /dev/null 2>&1 && alias gpl="git pull"
 type git > /dev/null 2>&1 && alias gps="git push origin"
+type podman > /dev/null 2>&1 && alias docker="podman"
 
 function scim {
     type scim > /dev/null 2>&1 || return;
