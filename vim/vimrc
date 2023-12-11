@@ -338,7 +338,7 @@ nmap <leader>gr <Plug>(coc-references)
 nmap <leader>gf <Plug>(coc-refactor)
 nmap <leader>gn <Plug>(coc-rename)
 imap <expr> <c-space> coc#refresh()
-nmap <leader>gs :call CocActionAsync('doHover')<CR>
+nmap <leader>gs :call ShowDocumentation()<CR>
 nmap <leader>gh <Plug>(coc-float-hide)
 xmap if <Plug>(coc-funcobj-i)
 omap if <Plug>(coc-funcobj-i)
@@ -356,6 +356,11 @@ inoremap <silent><expr> <TAB>
             \ <SID>check_back_space() ? "\<TAB>" :
             \ coc#refresh()
 
+function! ShowDocumentation()
+    if CocAction('hasProvider', 'hover')
+        call CocActionAsync('doHover')
+    endif
+endfunction
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
@@ -366,9 +371,16 @@ let g:coc_snippet_prev = '<s-tab>'
 
 augroup cocfunction
     autocmd!
-    autocmd CursorHold * silent call CocActionAsync('doHover')
+    autocmd CursorHold * silent call ShowDocumentation()
     autocmd CursorHold * silent call CocActionAsync('highlight')
 augroup END
+
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
 
 let g:coc_global_extensions = [
             \'coc-css',
@@ -384,6 +396,9 @@ let g:coc_global_extensions = [
             \'coc-snippets',
             \'coc-explorer',
             \'coc-marketplace',
+            \'coc-actions',
+            \'coc-rust-analyzer',
+            \'coc-docker',
             \]
 " }}}
 

@@ -76,7 +76,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg9
 plugins=(
   git
   #npm
-  #kubectl
+  kubectl
   #yarn
   zsh-autosuggestions
   z
@@ -125,3 +125,7 @@ source $HOME/.profile
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source ~/src/powerlevel10k/powerlevel10k.zsh-theme
+# Include Platform Configuration file
+if [ -f /Users/bsa/src/platform/tools/.platform_config ]; then
+    . /Users/bsa/src/platform/tools/.platform_config
+fi

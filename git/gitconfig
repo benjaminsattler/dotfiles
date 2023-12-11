@@ -7,3 +7,5 @@
 [alias]
 	cof = !git branch -r --format='%(refname:short)' | fzf --preview='git log --oneline --color=always --first-parent --no-merges `git merge-base develop {}`..{}'| sed -e 's/^origin\\///' | xargs git co --guess
 	co = checkout
+[rerere]
+	enabled = true

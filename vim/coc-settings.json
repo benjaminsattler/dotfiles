@@ -35,5 +35,7 @@
     "coc.preferences.colorSupport": true,
     "highlight.colors.enable": true,
     "explorer.icon.enableNerdfont":true,
-    "coc.source.emoji.filetypes": null
+    "coc.source.emoji.filetypes": null,
+    "coc.preferences.hoverTarget": "preview",
+    "snippets.ultisnips.pythonPrompt": false
 }
